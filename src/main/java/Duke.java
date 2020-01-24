@@ -25,18 +25,28 @@ public class Duke {
                 System.out.println(output);
                 break;
             } else if (command.equals("list")) {
-                String output = border + "\n\tHere is your list:\n";
-                for (int i = 1; list[i] != null; i++) {
-                    output += "\t(" + i + ") " + list[i] + "\n";
+                if (numItems == 0) {
+                    String output = border + "\n\tYou have nothing on your list.\n\n" + border;
+                    System.out.println(output);
+                } else {
+                    String output = border + "\n\tHere is your list:\n";
+                    for (int i = 1; list[i] != null; i++) {
+                        output += "\t(" + i + ") " + list[i] + "\n";
+                    }
+                    output += "\n" + border;
+                    System.out.println(output);
                 }
-                output += "\n" + border;
-                System.out.println(output);
             } else if (command.equals("done")) {
                 int index = parse.nextInt();
-                list[index].setDone();
-                String output = border + "\n\tI've marked (" + index + ") as done!\n";
-                output += "\t(" + index + ") " + list[index] + "\n\n" + border;
-                System.out.println(output);
+                if (index > numItems || index < 0) {
+                    String output = border + "\n\tYou have entered an invalid index.\n\n" + border;
+                    System.out.println(output);
+                } else {
+                    list[index].setDone();
+                    String output = border + "\n\tI've marked (" + index + ") as done!\n";
+                    output += "\t(" + index + ") " + list[index] + "\n\n" + border;
+                    System.out.println(output);
+                }
             } else {
                 String output = border + "\n\t" + "ADDED : ";
                 if (command.equals("todo")) {
