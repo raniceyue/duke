@@ -20,6 +20,7 @@ public class Duke {
             String input = sc.nextLine();
             Scanner parse = new Scanner(input);
             String command = parse.next();
+
             if (command.equals("bye")) {
                 String output = border + "\n" + "\tSee u the next time you test ur code :P\n\n" + border;
                 System.out.println(output);
@@ -48,32 +49,42 @@ public class Duke {
                     System.out.println(output);
                 }
             } else {
-                String output = border + "\n\t" + "ADDED : ";
-                if (command.equals("todo")) {
-                    String item = parse.nextLine();
-                    list[numItems + 1] = new ToDo(item);
+                try {
+                    String output = border + "\n\t" + "ADDED : ";
+                    if (command.equals("todo")) {
+                        if (!parse.hasNextLine()) {
+                            throw new DukeNoDescriptionException("todo");
+                        }
+                        String item = parse.nextLine();
+                        list[numItems + 1] = new ToDo(item);
+                    } else if (command.equals("event")) {
+                        if (!parse.hasNextLine()) {
+                            throw new DukeNoDescriptionException("event");
+                        }
+                        String item = parse.nextLine();
+                        String[] details = item.split("/at");
+                        if (details.length < 2) {
+                            throw new DukeNoDateException(command);
+                        }
+                        list[numItems + 1] = new Event(details[0], details[1]);
+                    } else if (command.equals("deadline")) {
+                        if (!parse.hasNextLine()) {
+                            throw new DukeNoDescriptionException("deadline");
+                        }
+                        String item = parse.nextLine();
+                        String[] details = item.split("/by");
+                        if (details.length < 2) {
+                            throw new DukeNoDateException(command);
+                        }
+                        list[numItems + 1] = new Deadline(details[0], details[1]);
+                    } else {
+                        throw new DukeUnknownCommandException();
+                    }
                     numItems++;
                     output += list[numItems] + "\n\n" + border;
                     System.out.println(output);
-                } else if (command.equals("event")) {
-                    String item = parse.nextLine();
-                    String[] details = item.split("/at");
-                    list[numItems + 1] = new Event(details[0], details[1]);
-                    numItems++;
-                    output += list[numItems] + "\n\n" + border;
-                    System.out.println(output);
-                } else if (command.equals("deadline")) {
-                    String item = parse.nextLine();
-                    String[] details = item.split("/by");
-                    list[numItems + 1] = new Deadline(details[0], details[1]);
-                    numItems++;
-                    output += list[numItems] + "\n\n" + border;
-                    System.out.println(output);
-                } else {
-                    list[numItems + 1] = new Task(input);
-                    numItems++;
-                    output += input + "\n\n" + border;
-                    System.out.println(output);
+                } catch (DukeException e) {
+                    System.out.println(e);
                 }
             }
         }
