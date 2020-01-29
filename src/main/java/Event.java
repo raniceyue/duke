@@ -1,13 +1,29 @@
-public class Event extends Task {
-    protected String date;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
-    public Event(String taskName, String date) {
+public class Event extends Task {
+    protected LocalDate date;
+    protected String time;
+
+    public Event(String taskName, String DateTime) {
         super(taskName);
-        this.date = date;
+        String[] dt = DateTime.split(" ");
+        String date = dt[0];
+        String time = dt[1];
+        this.date = LocalDate.parse(dt[0]);
+        this.time = time;
     }
 
     public String getDate() {
-        return date;
+        return date.format(DateTimeFormatter.ofPattern("d MMM yyyy"));
+    }
+
+    public String getTime() {
+        return this.time;
+    }
+
+    public String getDateTime() {
+        return getDate() + " " + getTime();
     }
 
     public String getType() {
@@ -16,6 +32,6 @@ public class Event extends Task {
 
     @Override
     public String toString() {
-        return "[E]" + super.toString() + " (at: " + getDate() + ")";
+        return "[E]" + super.toString() + "(at: " + getDateTime() + ")";
     }
 }
