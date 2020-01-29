@@ -11,6 +11,14 @@ public class Task {
         return taskName;
     }
 
+    public String getStatus() {
+        if (status) {
+            return "[X]";
+        } else {
+            return "[ ]";
+        }
+    }
+
     public void setDone() {
         this.status = true;
     }
