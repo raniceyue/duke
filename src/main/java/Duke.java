@@ -178,9 +178,9 @@ public class Duke {
                 if (e instanceof ToDo) {
                     toWrite.append(e.toString()).append("\n");
                 } else if (e instanceof Event) {
-                    toWrite.append(((Event) e).getType()).append(e.getStatus()).append(" ").append(e.getTaskName()).append(" /at ").append(((Event) e).getDate()).append("\n");
+                    toWrite.append(((Event) e).WriteFormat()).append("\n");
                 } else if (e instanceof Deadline) {
-                    toWrite.append(((Deadline) e).getType()).append(e.getStatus()).append(" ").append(e.getTaskName()).append(" /by ").append(((Deadline) e).getDate()).append("\n");
+                    toWrite.append(((Deadline) e).WriteFormat()).append("\n");
                 }
             }
             FileWriter fw = new FileWriter(path.toFile());
