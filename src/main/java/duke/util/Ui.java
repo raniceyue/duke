@@ -36,9 +36,4 @@ public class Ui {
         System.out.println(toPrint);
     }
 
-    public void IOException() {
-        System.out.println("IO Exception occurred.");
-    }
-
-
 }

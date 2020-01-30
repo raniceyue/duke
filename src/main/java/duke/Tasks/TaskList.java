@@ -2,13 +2,10 @@ package duke.Tasks;
 
 import duke.Exceptions.DukeBadIndexException;
 import duke.util.Ui;
-
 import java.util.ArrayList;
 
 public class TaskList {
     protected ArrayList<Task> list;
-
-    String border = "=^..^=   =^..^=   =^..^=    =^..^=    =^..^=    =^..^=    =^..^=\n";
 
     public TaskList() {
         this.list = new ArrayList<>();
@@ -64,11 +61,11 @@ public class TaskList {
         if (numTasks() == 0) {
             toPrint = Ui.setBorder("You have nothing on your list.");
         } else {
-            String msg = "Here is your list:\n";
+            StringBuilder msg = new StringBuilder("Here is your list:\n");
             for (Task e : list) {
-                msg += "\t(" + getTaskIndex(e) + ") " + e.toString() + "\n";
+                msg.append("\t(").append(getTaskIndex(e)).append(") ").append(e.toString()).append("\n");
             }
-            toPrint += Ui.setBorder(msg);
+            toPrint += Ui.setBorder(msg.toString());
         }
         return toPrint;
     }

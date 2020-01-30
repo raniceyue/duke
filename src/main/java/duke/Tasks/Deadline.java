@@ -1,7 +1,5 @@
 package duke.Tasks;
 
-import duke.Tasks.Task;
-
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
@@ -15,8 +13,7 @@ public class Deadline extends Task {
         String[] dt = DateTime.split(" ");
         this.RawDate = dt[0];
         this.date = LocalDate.parse(getRawDate());
-        String time = dt[1];
-        this.time = time;
+        this.time = dt[1];
     }
 
     public String getDate() {

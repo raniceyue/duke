@@ -4,8 +4,6 @@ import duke.Commands.Command;
 import duke.Exceptions.DukeException;
 import duke.Tasks.TaskList;
 
-import java.io.*;
-
 public class Duke {
     private Ui ui;
     private Storage storage;
@@ -16,8 +14,6 @@ public class Duke {
         this.storage = new Storage(fileName);
         try {
             taskList = new TaskList(storage.load());
-        } catch (IOException e) {
-            System.out.println("IOException, failed to load storage.");
         } catch (DukeException e) {
             System.out.println(e.toString());
         }

@@ -1,4 +1,5 @@
 package duke.Commands;
+import duke.Exceptions.DukeWriteFailException;
 import duke.Tasks.*;
 import duke.util.*;
 
@@ -15,12 +16,8 @@ public class ToDoCommand extends Command {
         return false;
     }
 
-    public void execute(TaskList taskList, Ui ui, Storage storage) {
-        try {
-            taskList.addTask(new ToDo(taskName));
-            storage.write(taskList);
-        } catch (IOException e) {
-            System.out.println("IOException: Error in writing back changes.");
-        }
+    public void execute(TaskList taskList, Ui ui, Storage storage) throws DukeWriteFailException {
+        taskList.addTask(new ToDo(taskName));
+        storage.write(taskList);
     }
 }

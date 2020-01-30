@@ -13,8 +13,7 @@ public class Event extends Task {
         String[] dt = DateTime.split(" ");
         this.RawDate = dt[0];
         this.date = LocalDate.parse(getRawDate());
-        String time = dt[1];
-        this.time = time;
+        this.time = dt[1];
     }
 
     public String getDate() {

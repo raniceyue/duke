@@ -6,18 +6,10 @@ import duke.Tasks.Deadline;
 import duke.Tasks.Event;
 import duke.Tasks.Task;
 import duke.Tasks.ToDo;
-
-import java.util.ArrayList;
 import java.util.Scanner;
-import java.util.List;
 
 public class Parser {
     protected String command;
-    protected String taskName;
-    protected String dateTime;
-    public static List<String> commandList = new ArrayList<>(List.of("bye", "list", "delete", "done", "event", "deadline", "todo"));
-
-    String border = "=^..^=   =^..^=   =^..^=    =^..^=    =^..^=    =^..^=    =^..^=\n";
 
     public static Command parseCommand(String s) throws DukeException {
         Scanner sc = new Scanner(s);
@@ -79,17 +71,23 @@ public class Parser {
         String task_type = e.substring(0, 3);
         String task_status = e.substring(3, 6);
         String task_details = e.substring(7);
-        Task t = null;
-        if (task_type.equals("[T]")) {
-            t = new ToDo(task_details);
-        } else if (task_type.equals("[E]")) {
-            String[] details = task_details.split(" /at ");
-            t = new Event(details[0], details[1]);
-        } else if (task_type.equals("[D]")) {
-            String[] details = task_details.split(" /by ");
-            t = new Deadline(details[0], details[1]);
-        } else {
-            throw new DukeNoDateException("testtttttt");
+        Task t;
+        switch (task_type) {
+            case "[T]":
+                t = new ToDo(task_details);
+                break;
+            case "[E]": {
+                String[] details = task_details.split(" /at ");
+                t = new Event(details[0], details[1]);
+                break;
+            }
+            case "[D]": {
+                String[] details = task_details.split(" /by ");
+                t = new Deadline(details[0], details[1]);
+                break;
+            }
+            default:
+                throw new DukeBadFileException();
         }
         if (task_status.equals("[X]")) {
             t.setDone();
@@ -97,16 +95,9 @@ public class Parser {
         return t;
     }
 
-
     public static void isValidIndex(int index) throws DukeBadIndexException {
         if (index == 0 || index < 0) {
             throw new DukeBadIndexException(index);
         }
     }
-
-    public static boolean isValidCommand(String s) {
-        return commandList.contains(s);
-    }
-
-
 }
