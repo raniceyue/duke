@@ -1,3 +1,5 @@
+package duke.Exceptions;
+
 public class DukeBadIndexException extends DukeException {
     public DukeBadIndexException(int index) {
         if (index < 0) {

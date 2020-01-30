@@ -1,3 +1,8 @@
+package duke.Commands;
+
+import duke.Tasks.TaskList;
+import duke.util.Storage;
+import duke.util.Ui;
 import java.io.IOException;
 
 public class DoneCommand extends Command {
@@ -17,8 +22,6 @@ public class DoneCommand extends Command {
             storage.write(taskList);
         } catch (IOException e) {
             System.out.println("IOException caught!");
-        } catch (DukeException e) {
-            System.out.println(e.toString());
         }
     }
 }

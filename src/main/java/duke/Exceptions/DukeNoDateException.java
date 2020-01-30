@@ -1,3 +1,5 @@
+package duke.Exceptions;
+
 public class DukeNoDateException extends DukeException {
     public DukeNoDateException(String taskName) {
         if (taskName.equals("deadline")) {

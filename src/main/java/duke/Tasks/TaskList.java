@@ -1,3 +1,8 @@
+package duke.Tasks;
+
+import duke.Exceptions.DukeBadIndexException;
+import duke.util.Ui;
+
 import java.util.ArrayList;
 
 public class TaskList {
@@ -42,7 +47,7 @@ public class TaskList {
         System.out.println(toPrint);
     }
 
-    public void deleteTask(int n) throws  DukeBadIndexException {
+    public void deleteTask(int n) throws DukeBadIndexException {
         if (n > numTasks()) {
             throw new DukeBadIndexException(n);
         }

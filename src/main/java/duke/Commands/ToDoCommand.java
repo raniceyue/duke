@@ -1,12 +1,14 @@
+package duke.Commands;
+import duke.Tasks.*;
+import duke.util.*;
+
 import java.io.IOException;
 
-public class EventCommand extends Command {
-    protected String taskName;
-    protected String dateTime;
+public class ToDoCommand extends Command {
+    String taskName;
 
-    public EventCommand(String taskName, String dateTime) {
+    public ToDoCommand(String taskName) {
         this.taskName = taskName;
-        this.dateTime = dateTime;
     }
 
     public boolean isExit() {
@@ -15,7 +17,7 @@ public class EventCommand extends Command {
 
     public void execute(TaskList taskList, Ui ui, Storage storage) {
         try {
-            taskList.addTask(new Event(taskName, dateTime));
+            taskList.addTask(new ToDo(taskName));
             storage.write(taskList);
         } catch (IOException e) {
             System.out.println("IOException: Error in writing back changes.");

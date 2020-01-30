@@ -1,7 +1,15 @@
+package duke.util;
+
+import duke.Commands.*;
+import duke.Exceptions.*;
+import duke.Tasks.Deadline;
+import duke.Tasks.Event;
+import duke.Tasks.Task;
+import duke.Tasks.ToDo;
+
 import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.List;
-import java.lang.Exception;
 
 public class Parser {
     protected String command;

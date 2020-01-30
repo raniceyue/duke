@@ -1,3 +1,5 @@
+package duke.Exceptions;
+
 public class DukeException extends Exception {
     protected String message;
 
