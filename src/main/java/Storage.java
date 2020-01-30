@@ -11,8 +11,8 @@ public class Storage {
     protected Path data_path;
 
     public Storage(String filePath) {
-        this.project_root = Paths.get(home).getParent().getParent().getParent();
-        this.data_path = Paths.get(project_root.toString(), filePath);
+        this.project_root = Paths.get(home);
+        this.data_path = Paths.get(project_root.toString(), "data", filePath);
     }
 
     public ArrayList<Task> load() throws DukeException, IOException {
