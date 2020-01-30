@@ -48,6 +48,7 @@ public class Parser {
                     if (details.length < 2) {
                         throw new DukeNoDateException(w1);
                     } else {
+                        isValidDateTime(details[1]);
                         return new EventCommand(details[0], details[1]);
                     }
                 }
@@ -59,6 +60,7 @@ public class Parser {
                     if (details.length < 2) {
                         throw new DukeNoDateException(w1);
                     } else {
+                        isValidDateTime(details[1]);
                         return new DeadlineCommand(details[0], details[1]);
                     }
                 }
@@ -98,6 +100,20 @@ public class Parser {
     public static void isValidIndex(int index) throws DukeBadIndexException {
         if (index == 0 || index < 0) {
             throw new DukeBadIndexException(index);
+        }
+    }
+
+    public static void isValidDateTime(String dateTime) throws DukeBadDateException, DukeBadDateTimeException {
+        String[] p = dateTime.split(" ");
+        if (p.length < 2) {
+            throw new DukeBadDateTimeException();
+        } else {
+            String date = p[0];
+            String time = p[1];
+            String[] date_parsed = date.split("-");
+            if (date_parsed.length < 3) {
+                throw new DukeBadDateException();
+            }
         }
     }
 }

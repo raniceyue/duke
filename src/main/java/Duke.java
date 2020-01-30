@@ -1,8 +1,9 @@
-package duke.util;
-
 import duke.Commands.Command;
 import duke.Exceptions.DukeException;
 import duke.Tasks.TaskList;
+import duke.util.Parser;
+import duke.util.Storage;
+import duke.util.Ui;
 
 public class Duke {
     private Ui ui;
