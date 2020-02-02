@@ -55,6 +55,15 @@ public class TaskList {
         System.out.println(toPrint);
     }
 
+    public TaskList search(String keyword) {
+        ArrayList<Task> results = new ArrayList<>();
+        for (Task t : list) {
+            if (t.getTaskName().contains(keyword)) {
+                results.add(t);
+            }
+        }
+        return new TaskList(results);
+    }
 
     @Override
     public String toString() {

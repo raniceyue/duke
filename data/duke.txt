@@ -1,1 +1,2 @@
-[T][ ]  ass
+[E][X] read book /at 2020-02-02 1800
+[D][X] eat book /by 2020-02-01 1800
