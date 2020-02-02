@@ -1,9 +1,10 @@
 package duke.Commands;
-import duke.Exceptions.DukeWriteFailException;
-import duke.Tasks.*;
-import duke.util.*;
 
-import java.io.IOException;
+import duke.Exceptions.DukeWriteFailException;
+import duke.Tasks.TaskList;
+import duke.Tasks.ToDo;
+import duke.util.Storage;
+import duke.util.Ui;
 
 public class ToDoCommand extends Command {
     String taskName;

@@ -5,12 +5,13 @@ import duke.Exceptions.DukeWriteFailException;
 import duke.Tasks.TaskList;
 import duke.util.Storage;
 import duke.util.Ui;
+
 import java.io.IOException;
 
-public class DoneCommand extends Command {
+public class DeleteCommand extends Command {
     protected int index;
 
-    public DoneCommand(int index) {
+    public DeleteCommand(int index) {
         this.index = index;
     }
 
@@ -18,17 +19,19 @@ public class DoneCommand extends Command {
         return false;
     }
 
-    public void execute(TaskList taskList, Ui ui, Storage storage) throws DukeBadIndexException, DukeWriteFailException {
-        taskList.setDone(index);
+    public void execute(
+            TaskList taskList, Ui ui, Storage storage) throws DukeBadIndexException, DukeWriteFailException {
+        taskList.deleteTask(index);
         storage.write(taskList);
     }
 
     @Override
     public boolean equals(Object command) {
-        if (command instanceof DoneCommand) {
-            return this.index == ((DoneCommand) command).index;
+        if (command instanceof DeleteCommand) {
+            return this.index == ((DeleteCommand) command).index;
         } else {
             return false;
         }
     }
+
 }

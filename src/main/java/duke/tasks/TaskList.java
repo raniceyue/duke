@@ -29,8 +29,8 @@ public class TaskList {
 
     public void addTask(Task t) {
         getList().add(t);
-        String toPrint = Ui.setBorder("ADDED : " + t + "\n" +
-                "\tYou now have " + numTasks() + " item(s) on your list.");
+        String toPrint = Ui.setBorder("ADDED : " + t + "\n"
+                + "\tYou now have " + numTasks() + " item(s) on your list.");
         System.out.println(toPrint);
     }
 
@@ -39,8 +39,8 @@ public class TaskList {
             throw new DukeBadIndexException(n);
         }
         getList().get(n - 1).setDone();
-        String toPrint = Ui.setBorder("I've marked (" + n + ") as done!\n" +
-                "\t(" + n + ") " + getList().get(n - 1));
+        String toPrint = Ui.setBorder("I've marked (" + n + ") as done!\n"
+                + "\t(" + n + ") " + getList().get(n - 1));
         System.out.println(toPrint);
     }
 
@@ -48,7 +48,7 @@ public class TaskList {
         if (n > numTasks()) {
             throw new DukeBadIndexException(n);
         }
-        Task t = getList().get(n -1);
+        Task t = getList().get(n - 1);
         getList().remove(n - 1);
         String toPrint = Ui.setBorder("OK, I've removed the task:\n\t\t" + t + "\n"
                         + "\tYou now have " + (getList().size()) + " task(s) on your list.");

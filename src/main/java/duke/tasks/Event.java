@@ -3,15 +3,15 @@ package duke.Tasks;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
-public class Deadline extends Task {
+public class Event extends Task {
     protected LocalDate date;
     protected String time;
-    protected String RawDate;
+    protected String rawDate;
 
-    public Deadline(String taskName, String DateTime) {
+    public Event(String taskName, String dateTime) {
         super(taskName);
-        String[] dt = DateTime.split(" ");
-        this.RawDate = dt[0];
+        String[] dt = dateTime.split(" ");
+        this.rawDate = dt[0];
         this.date = LocalDate.parse(getRawDate());
         this.time = dt[1];
     }
@@ -29,23 +29,23 @@ public class Deadline extends Task {
     }
 
     public String getRawDate() {
-        return RawDate;
+        return rawDate;
     }
 
     public String getType() {
-        return "[D]";
+        return "[E]";
     }
 
-    public String WriteFormat() {
-        return getType() + getStatus() + " " + getTaskName() + " /by " + getRawDate() + " " + getTime();
+    public String writeFormat() {
+        return getType() + getStatus() + " " + getTaskName() + " /at " + getRawDate() + " " + getTime();
     }
 
     @Override
     public boolean equals(Object task) {
-        if (task instanceof Deadline) {
-            if (((Deadline) task).getTaskName().equals(this.getTaskName())) {
-                if (((Deadline) task).getDateTime().equals(this.getDateTime())) {
-                    return ((Deadline) task).getStatus() == this.getStatus();
+        if (task instanceof Event) {
+            if (((Event)task).getTaskName().equals(this.getTaskName())) {
+                if (((Event) task).getDateTime().equals(this.getDateTime())) {
+                    return ((Event) task).getStatus() == this.getStatus();
                 } else {
                     return false;
                 }
@@ -59,6 +59,6 @@ public class Deadline extends Task {
 
     @Override
     public String toString() {
-        return "[D]" + super.toString() + " (due by: " + getDateTime() + ")";
+        return "[E]" + super.toString() + " (at: " + getDateTime() + ")";
     }
 }
