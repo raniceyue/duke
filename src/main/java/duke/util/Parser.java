@@ -1,11 +1,13 @@
 package duke.util;
 
-import duke.Commands.*;
-import duke.Exceptions.*;
-import duke.Tasks.Deadline;
-import duke.Tasks.Event;
-import duke.Tasks.Task;
-import duke.Tasks.ToDo;
+
+import duke.commands.*;
+import duke.exceptions.*;
+import duke.tasks.Deadline;
+import duke.tasks.Event;
+import duke.tasks.Task;
+import duke.tasks.ToDo;
+
 import java.util.Scanner;
 
 public class Parser {

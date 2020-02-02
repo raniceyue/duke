@@ -1,4 +1,4 @@
-package duke.Exceptions;
+package duke.exceptions;
 
 public class DukeNoKeywordException extends DukeException {
     public DukeNoKeywordException() {
