@@ -17,6 +17,12 @@ public class Parser {
         switch (w1) {
             case "bye":
                 return new ByeCommand();
+            case "find":
+                if (sc.hasNext()) {
+                    return new FindCommand(sc.next());
+                } else {
+                    throw new DukeNoKeywordException();
+                }
             case "list":
                 return new ListCommand();
             case "done":
