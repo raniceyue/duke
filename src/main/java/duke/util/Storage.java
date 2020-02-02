@@ -14,16 +14,28 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Represents object that handles storage and loading of data from storage file.
+ */
 public class Storage {
     public static String home = System.getProperty("user.dir");
     protected Path project_root;
     protected Path data_path;
 
+    /**
+     * Constructor for Storage.
+     * @param filePath path of storage file.
+     */
     public Storage(String filePath) {
         this.project_root = Paths.get(home);
         this.data_path = Paths.get(project_root.toString(), "data", filePath);
     }
 
+    /**
+     * Method that loads data from the storage file.
+     * @return array list containing tasks loaded from storage file.
+     * @throws DukeException if the path is invalid and data cannot be loaded.
+     */
     public ArrayList<Task> load() throws DukeException {
         ArrayList<Task> list = new ArrayList<>();
         try {
@@ -40,6 +52,11 @@ public class Storage {
         }
     }
 
+    /**
+     * Method to write changes back into storage file.
+     * @param taskList task list to be written back into file.
+     * @throws DukeWriteFailException if the data fails to be written into file.
+     */
     public void write(TaskList taskList) throws DukeWriteFailException {
         StringBuilder toWrite = new StringBuilder();
         for (Task e : taskList.getList()) {

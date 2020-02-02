@@ -4,13 +4,24 @@ import duke.Exceptions.DukeBadIndexException;
 import duke.util.Ui;
 import java.util.ArrayList;
 
+
+/**
+ * Represents task list that keeps track of tasks.
+ */
 public class TaskList {
     protected ArrayList<Task> list;
 
+    /**
+     * Constructor for empty TaskList.
+     */
     public TaskList() {
         this.list = new ArrayList<>();
     }
 
+    /**
+     * Constructor to instantiate TaskList with an array list of tasks.
+     * @param list containing tasks.
+     */
     public TaskList(ArrayList<Task> list) {
         this.list = list;
     }
@@ -23,17 +34,31 @@ public class TaskList {
         return list.size();
     }
 
-    public int getTaskIndex(Task t) {
-        return getList().indexOf(t) + 1;
+    /**
+     * Method to get index of a task in the task list.
+     * @param task to query index.
+     * @return index of task.
+     */
+    public int getTaskIndex(Task task) {
+        return getList().indexOf(task) + 1;
     }
 
-    public void addTask(Task t) {
-        getList().add(t);
-        String toPrint = Ui.setBorder("ADDED : " + t + "\n" +
+    /**
+     * Method to add a task to the task list.
+     * @param task to be added to task list.
+     */
+    public void addTask(Task task) {
+        getList().add(task);
+        String toPrint = Ui.setBorder("ADDED : " + task + "\n" +
                 "\tYou now have " + numTasks() + " item(s) on your list.");
         System.out.println(toPrint);
     }
 
+    /**
+     * Method to mark as task as done in the task list.
+     * @param n index of task to be marked as done.
+     * @throws DukeBadIndexException to handle indices that are out of range or negative.
+     */
     public void setDone(int n) throws DukeBadIndexException {
         if (n > numTasks()) {
             throw new DukeBadIndexException(n);
@@ -44,6 +69,11 @@ public class TaskList {
         System.out.println(toPrint);
     }
 
+    /**
+     * Method to delete task from task list.
+     * @param n index of task to be deleted from task list.
+     * @throws DukeBadIndexException to handle indices that are out of range or negative.
+     */
     public void deleteTask(int n) throws DukeBadIndexException {
         if (n > numTasks()) {
             throw new DukeBadIndexException(n);
@@ -56,6 +86,10 @@ public class TaskList {
     }
 
 
+    /**
+     * Method to convert task list into a string.
+     * @return string containing comprehensive list of tasks in task list.
+     */
     @Override
     public String toString() {
         String toPrint = "";
@@ -70,5 +104,4 @@ public class TaskList {
         }
         return toPrint;
     }
-
 }

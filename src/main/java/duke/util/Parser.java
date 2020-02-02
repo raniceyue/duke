@@ -8,9 +8,19 @@ import duke.Tasks.Task;
 import duke.Tasks.ToDo;
 import java.util.Scanner;
 
+/**
+ * Represents parser that parses commands from the user input.
+ * Parser also handles parsing of data from storage file, to be loaded into the program.
+ */
 public class Parser {
     protected String command;
 
+    /**
+     * Method that parses single line of command.
+     * @param s string to be parsed.
+     * @return parsed command as a command object.
+     * @throws DukeException if the command is invalid, not formatted correctly or is missing information.
+     */
     public static Command parseCommand(String s) throws DukeException {
         Scanner sc = new Scanner(s);
         String w1 = sc.next();
@@ -69,6 +79,12 @@ public class Parser {
         }
     }
 
+    /**
+     * Method to parse a single line from the storage file.
+     * @param e string to be parsed.
+     * @return parsed line as a task object.
+     * @throws DukeException if the data in the file is not formatted correctly.
+     */
     public static Task parseFileLine(String e) throws DukeException {
         String task_type = e.substring(0, 3);
         String task_status = e.substring(3, 6);
@@ -101,12 +117,23 @@ public class Parser {
     IMPORTANT: parseFileLine incomplete, not all edge cases accounted for.
      */
 
+    /**
+     * Method to check if indices are positive integers.
+     * @param index to be checked.
+     * @throws DukeBadIndexException to handle event where index is not valid.
+     */
     public static void isValidIndex(int index) throws DukeBadIndexException {
         if (index == 0 || index < 0) {
             throw new DukeBadIndexException(index);
         }
     }
 
+    /**
+     * Method to check if the date and time are formatted correctly.
+     * @param dateTime date and time string to be checked.
+     * @throws DukeBadDateException if the date is not in the correct format.
+     * @throws DukeBadDateTimeException if the date and time are not in the correct format.
+     */
     public static void isValidDateTime(String dateTime) throws DukeBadDateException, DukeBadDateTimeException {
         String[] p = dateTime.split(" ");
         if (p.length < 2) {

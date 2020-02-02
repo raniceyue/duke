@@ -1,5 +1,8 @@
 package duke.Exceptions;
 
+/**
+ * Exception to handle event where command is missing date input.
+ */
 public class DukeNoDateException extends DukeException {
     public DukeNoDateException(String taskName) {
         if (taskName.equals("deadline")) {

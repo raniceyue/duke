@@ -2,11 +2,21 @@ package duke.util;
 
 import java.util.Scanner;
 
+/**
+ * Class to handle user input and program outputs.
+ */
 public class Ui {
     public static final String border = "=^..^=   =^..^=   =^..^=    =^..^=    =^..^=    =^..^=    =^..^=\n";
 
+    /**
+     * Constructor for Ui.
+     */
     public Ui() { }
 
+    /**
+     * Method to read single line of command.
+     * @return returns the read command as a string.
+     */
     public String readCommand() {
         Scanner sc = new Scanner(System.in);
         String command = "";
@@ -17,7 +27,11 @@ public class Ui {
         return command;
     }
 
-    /*Wraps border around msg*/
+    /**
+     * Method to wrap border decoration around message.
+     * @param msg message to be put inside border.
+     * @return string containing message decorated with border.
+     */
     public static String setBorder(String msg) {
         return border + "\n\t" + msg + "\n\n" + border;
     }

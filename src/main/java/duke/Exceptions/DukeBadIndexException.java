@@ -1,5 +1,8 @@
 package duke.Exceptions;
 
+/**
+ * Exception to handle indices that are out of range.
+ */
 public class DukeBadIndexException extends DukeException {
     public DukeBadIndexException(int index) {
         if (index < 0) {
