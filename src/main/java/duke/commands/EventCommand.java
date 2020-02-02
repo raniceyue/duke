@@ -1,8 +1,8 @@
-package duke.Commands;
+package duke.commands;
 
-import duke.Exceptions.DukeWriteFailException;
-import duke.Tasks.Event;
-import duke.Tasks.TaskList;
+import duke.exceptions.DukeWriteFailException;
+import duke.tasks.Event;
+import duke.tasks.TaskList;
 import duke.util.Storage;
 import duke.util.Ui;
 

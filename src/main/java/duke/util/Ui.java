@@ -5,7 +5,9 @@ import java.util.Scanner;
 public class Ui {
     public static final String border = "=^..^=   =^..^=   =^..^=    =^..^=    =^..^=    =^..^=    =^..^=\n";
 
-    public Ui() { }
+    public Ui() {
+
+    }
 
     public String readCommand() {
         Scanner sc = new Scanner(System.in);

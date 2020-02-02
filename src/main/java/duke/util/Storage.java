@@ -1,9 +1,13 @@
 package duke.util;
 
-import duke.Exceptions.DukeBadPathException;
-import duke.Exceptions.DukeException;
-import duke.Exceptions.DukeWriteFailException;
-import duke.Tasks.*;
+import duke.exceptions.DukeBadPathException;
+import duke.exceptions.DukeException;
+import duke.exceptions.DukeWriteFailException;
+import duke.tasks.Deadline;
+import duke.tasks.Event;
+import duke.tasks.Task;
+import duke.tasks.TaskList;
+import duke.tasks.ToDo;
 
 import java.io.BufferedWriter;
 import java.io.FileWriter;
@@ -16,27 +20,27 @@ import java.util.List;
 
 public class Storage {
     public static String home = System.getProperty("user.dir");
-    protected Path project_root;
-    protected Path data_path;
+    protected Path projectRootPath;
+    protected Path dataFilePath;
 
     public Storage(String filePath) {
-        this.project_root = Paths.get(home);
-        this.data_path = Paths.get(project_root.toString(), "data", filePath);
+        this.projectRootPath = Paths.get(home);
+        this.dataFilePath = Paths.get(projectRootPath.toString(), "data", filePath);
     }
 
     public ArrayList<Task> load() throws DukeException {
         ArrayList<Task> list = new ArrayList<>();
         try {
-            List<String> loaded_data = Files.readAllLines(data_path);
-            for (String e : loaded_data) {
-                if (loaded_data.isEmpty() || e.isBlank()) {
+            List<String> loadedData = Files.readAllLines(dataFilePath);
+            for (String e : loadedData) {
+                if (loadedData.isEmpty() || e.isBlank()) {
                     break;
                 }
                 list.add(Parser.parseFileLine(e));
             }
             return list;
         } catch (IOException e) {
-            throw new DukeBadPathException(data_path);
+            throw new DukeBadPathException(dataFilePath);
         }
     }
 
@@ -46,14 +50,14 @@ public class Storage {
             if (e instanceof ToDo) {
                 toWrite.append(e.toString()).append("\n");
             } else if (e instanceof Event) {
-                toWrite.append(((Event) e).WriteFormat()).append("\n");
+                toWrite.append(((Event) e).writeFormat()).append("\n");
             } else if (e instanceof Deadline) {
-                toWrite.append(((Deadline) e).WriteFormat()).append("\n");
+                toWrite.append(((Deadline) e).writeFormat()).append("\n");
             }
         }
 
         try {
-            FileWriter fw = new FileWriter(data_path.toFile());
+            FileWriter fw = new FileWriter(dataFilePath.toFile());
             BufferedWriter bw = new BufferedWriter(fw);
             bw.write(toWrite.toString());
             bw.close();

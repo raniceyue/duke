@@ -1,4 +1,4 @@
-package duke.Exceptions;
+package duke.exceptions;
 
 public class DukeNoDateException extends DukeException {
     public DukeNoDateException(String taskName) {

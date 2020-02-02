@@ -1,4 +1,4 @@
-package duke.Exceptions;
+package duke.exceptions;
 
 public class DukeBadIndexException extends DukeException {
     public DukeBadIndexException(int index) {
