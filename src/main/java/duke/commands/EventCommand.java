@@ -14,7 +14,7 @@ public class EventCommand extends Command {
     protected String dateTime;
 
     /**
-     * Constructor for EventCommand
+     * Constructor for EventCommand.
      * @param taskName name of event.
      * @param dateTime date and time of event occurrence.
      */

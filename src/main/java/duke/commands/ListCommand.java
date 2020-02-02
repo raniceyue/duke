@@ -12,7 +12,9 @@ public class ListCommand extends Command {
     /**
      * Constructor for ListCommand.
      */
-    public ListCommand() { }
+    public ListCommand() {
+
+    }
 
     /**
      * Method to check if command is the exit command.

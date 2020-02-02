@@ -13,6 +13,10 @@ public class Task {
         return taskName;
     }
 
+    /**
+     * Method to get status of a task as a string.
+     * @return string indicating if the task is done or not.
+     */
     public String getStatus() {
         if (status) {
             return "[X]";

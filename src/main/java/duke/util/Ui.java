@@ -9,6 +9,10 @@ public class Ui {
 
     }
 
+    /**
+     * Method to read user input.
+     * @return String containing user input.
+     */
     public String readCommand() {
         Scanner sc = new Scanner(System.in);
         String command = "";
@@ -19,11 +23,13 @@ public class Ui {
         return command;
     }
 
-    /*Wraps border around msg*/
     public static String setBorder(String msg) {
         return border + "\n\t" + msg + "\n\n" + border;
     }
 
+    /**
+     * Method to print welcome message at start of program.
+     */
     public static void printWelcomeMsg() {
         String logo = " ____        _        \n"
                 + "|  _ \\ _   _| | _____ \n"
