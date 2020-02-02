@@ -6,8 +6,6 @@ import duke.Tasks.TaskList;
 import duke.util.Storage;
 import duke.util.Ui;
 
-import java.io.IOException;
-
 public class DeadlineCommand extends Command {
     String taskName;
     String dateTime;
@@ -25,4 +23,18 @@ public class DeadlineCommand extends Command {
         taskList.addTask(new Deadline(taskName, dateTime));
         storage.write(taskList);
     }
+
+    @Override
+    public boolean equals(Object command) {
+        if (command instanceof DeadlineCommand) {
+            if (((DeadlineCommand) command).taskName.equals(this.taskName)) {
+                return ((DeadlineCommand) command).dateTime.equals(this.dateTime);
+            } else {
+                return false;
+            }
+        } else {
+            return false;
+        }
+    }
+
 }

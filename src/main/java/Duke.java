@@ -1,4 +1,7 @@
 import duke.Commands.Command;
+import duke.Commands.DeadlineCommand;
+import duke.Commands.DoneCommand;
+import duke.Commands.EventCommand;
 import duke.Exceptions.DukeException;
 import duke.Tasks.TaskList;
 import duke.util.Parser;
@@ -20,7 +23,7 @@ public class Duke {
         }
     }
 
-    public void run() {
+    public void run() throws DukeException {
         ui.printWelcomeMsg();
         boolean isExit = false;
         while (!isExit) {
@@ -36,7 +39,7 @@ public class Duke {
 
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws DukeException {
         new Duke("duke.txt").run();
     }
 }

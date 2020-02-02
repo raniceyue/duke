@@ -22,4 +22,13 @@ public class DoneCommand extends Command {
         taskList.setDone(index);
         storage.write(taskList);
     }
+
+    @Override
+    public boolean equals(Object command) {
+        if (command instanceof DoneCommand) {
+            return this.index == ((DoneCommand) command).index;
+        } else {
+            return false;
+        }
+    }
 }

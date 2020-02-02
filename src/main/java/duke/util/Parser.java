@@ -97,6 +97,10 @@ public class Parser {
         return t;
     }
 
+    /*
+    IMPORTANT: parseFileLine incomplete, not all edge cases accounted for.
+     */
+
     public static void isValidIndex(int index) throws DukeBadIndexException {
         if (index == 0 || index < 0) {
             throw new DukeBadIndexException(index);

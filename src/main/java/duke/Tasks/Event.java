@@ -41,6 +41,23 @@ public class Event extends Task {
     }
 
     @Override
+    public boolean equals(Object task) {
+        if (task instanceof Event) {
+            if (((Event)task).getTaskName().equals(this.getTaskName())) {
+                if (((Event) task).getDateTime().equals(this.getDateTime())) {
+                    return ((Event) task).getStatus() == this.getStatus();
+                } else {
+                    return false;
+                }
+            } else {
+                return false;
+            }
+        } else {
+            return false;
+        }
+    }
+
+    @Override
     public String toString() {
         return "[E]" + super.toString() + " (at: " + getDateTime() + ")";
     }

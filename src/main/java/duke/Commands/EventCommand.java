@@ -5,7 +5,6 @@ import duke.Tasks.Event;
 import duke.Tasks.TaskList;
 import duke.util.Storage;
 import duke.util.Ui;
-import java.io.IOException;
 
 
 public class EventCommand extends Command {
@@ -24,5 +23,18 @@ public class EventCommand extends Command {
     public void execute(TaskList taskList, Ui ui, Storage storage) throws DukeWriteFailException {
         taskList.addTask(new Event(taskName, dateTime));
         storage.write(taskList);
+    }
+
+    @Override
+    public boolean equals(Object command) {
+        if (command instanceof EventCommand) {
+            if (((EventCommand) command).taskName.equals(this.taskName)) {
+                return ((EventCommand) command).dateTime.equals(this.dateTime);
+            } else {
+                return false;
+            }
+        } else {
+            return false;
+        }
     }
 }

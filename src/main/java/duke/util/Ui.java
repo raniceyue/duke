@@ -3,7 +3,7 @@ package duke.util;
 import java.util.Scanner;
 
 public class Ui {
-    public static String border = "=^..^=   =^..^=   =^..^=    =^..^=    =^..^=    =^..^=    =^..^=\n";
+    public static final String border = "=^..^=   =^..^=   =^..^=    =^..^=    =^..^=    =^..^=    =^..^=\n";
 
     public Ui() { }
 
@@ -22,7 +22,7 @@ public class Ui {
         return border + "\n\t" + msg + "\n\n" + border;
     }
 
-    public void printWelcomeMsg() {
+    public static void printWelcomeMsg() {
         String logo = " ____        _        \n"
                 + "|  _ \\ _   _| | _____ \n"
                 + "| | | | | | | |/ / _ \\\n"
@@ -31,7 +31,7 @@ public class Ui {
         System.out.println("Greetings mortal, my name is\n" + logo + "How may I help you?\n");
     }
 
-    public void printExitMsg() {
+    public static void printExitMsg() {
         String toPrint = setBorder("See u the next time you test ur code :P");
         System.out.println(toPrint);
     }

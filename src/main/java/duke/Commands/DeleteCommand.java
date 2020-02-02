@@ -23,4 +23,14 @@ public class DeleteCommand extends Command {
         taskList.deleteTask(index);
         storage.write(taskList);
     }
+
+    @Override
+    public boolean equals(Object command) {
+        if (command instanceof DeleteCommand) {
+            return this.index == ((DeleteCommand) command).index;
+        } else {
+            return false;
+        }
+    }
+
 }

@@ -41,6 +41,23 @@ public class Deadline extends Task {
     }
 
     @Override
+    public boolean equals(Object task) {
+        if (task instanceof Deadline) {
+            if (((Deadline) task).getTaskName().equals(this.getTaskName())) {
+                if (((Deadline) task).getDateTime().equals(this.getDateTime())) {
+                    return ((Deadline) task).getStatus() == this.getStatus();
+                } else {
+                    return false;
+                }
+            } else {
+                return false;
+            }
+        } else {
+            return false;
+        }
+    }
+
+    @Override
     public String toString() {
         return "[D]" + super.toString() + " (due by: " + getDateTime() + ")";
     }

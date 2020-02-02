@@ -20,4 +20,13 @@ public class ToDoCommand extends Command {
         taskList.addTask(new ToDo(taskName));
         storage.write(taskList);
     }
+
+    @Override
+    public boolean equals(Object command) {
+        if (command instanceof ToDoCommand) {
+            return this.taskName.equals(((ToDoCommand) command).taskName);
+        } else {
+            return false;
+        }
+    }
 }
