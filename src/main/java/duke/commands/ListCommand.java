@@ -1,7 +1,8 @@
-package duke.Commands;
+package duke.commands;
 
-import duke.Tasks.TaskList;
-import duke.util.*;
+import duke.tasks.TaskList;
+import duke.util.Storage;
+import duke.util.Ui;
 
 /**
  * Represents the command 'list'.

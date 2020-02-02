@@ -1,9 +1,6 @@
-import duke.Commands.Command;
-import duke.Commands.DeadlineCommand;
-import duke.Commands.DoneCommand;
-import duke.Commands.EventCommand;
-import duke.Exceptions.DukeException;
-import duke.Tasks.TaskList;
+import duke.commands.Command;
+import duke.exceptions.DukeException;
+import duke.tasks.TaskList;
 import duke.util.Parser;
 import duke.util.Storage;
 import duke.util.Ui;

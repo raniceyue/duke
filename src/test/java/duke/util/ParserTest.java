@@ -1,12 +1,12 @@
 package duke.util;
 
-import duke.Commands.DeadlineCommand;
-import duke.Commands.DoneCommand;
-import duke.Commands.EventCommand;
-import duke.Exceptions.DukeException;
-import duke.Tasks.Deadline;
-import duke.Tasks.Event;
-import duke.Tasks.ToDo;
+import duke.commands.DeadlineCommand;
+import duke.commands.DoneCommand;
+import duke.commands.EventCommand;
+import duke.exceptions.DukeException;
+import duke.tasks.Deadline;
+import duke.tasks.Event;
+import duke.tasks.ToDo;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.fail;

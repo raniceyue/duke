@@ -1,23 +1,23 @@
-package duke.Commands;
+package duke.commands;
 
-import duke.Exceptions.DukeBadIndexException;
-import duke.Exceptions.DukeWriteFailException;
-import duke.Tasks.TaskList;
+import duke.exceptions.DukeWriteFailException;
+import duke.tasks.TaskList;
+import duke.tasks.ToDo;
 import duke.util.Storage;
 import duke.util.Ui;
 
 /**
- * Represents the command 'done'.
+ * Represents the command 'todo'.
  */
-public class DoneCommand extends Command {
-    protected int index;
+public class ToDoCommand extends Command {
+    String taskName;
 
     /**
-     * Constructor for DoneCommand.
-     * @param index of task to be marked as done.
+     * Constructor for ToDoCommand.
+     * @param taskName name of task to be done.
      */
-    public DoneCommand(int index) {
-        this.index = index;
+    public ToDoCommand(String taskName) {
+        this.taskName = taskName;
     }
 
     /**
@@ -29,15 +29,14 @@ public class DoneCommand extends Command {
     }
 
     /**
-     * Method to execute 'done' command.
+     * Method to execute 'todo' command.
      * @param taskList task list in running program.
      * @param ui ui handling running program.
      * @param storage storage handling running program.
-     * @throws DukeBadIndexException if index for command is out of range of the task list indices.
      * @throws DukeWriteFailException if the program fails to write the modified data to the storage file.
      */
-    public void execute(TaskList taskList, Ui ui, Storage storage) throws DukeBadIndexException, DukeWriteFailException {
-        taskList.setDone(index);
+    public void execute(TaskList taskList, Ui ui, Storage storage) throws DukeWriteFailException {
+        taskList.addTask(new ToDo(taskName));
         storage.write(taskList);
     }
 
@@ -48,8 +47,8 @@ public class DoneCommand extends Command {
      */
     @Override
     public boolean equals(Object command) {
-        if (command instanceof DoneCommand) {
-            return this.index == ((DoneCommand) command).index;
+        if (command instanceof ToDoCommand) {
+            return this.taskName.equals(((ToDoCommand) command).taskName);
         } else {
             return false;
         }

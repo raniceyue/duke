@@ -1,4 +1,4 @@
-package duke.Tasks;
+package duke.tasks;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
@@ -6,12 +6,12 @@ import java.time.format.DateTimeFormatter;
 public class Event extends Task {
     protected LocalDate date;
     protected String time;
-    protected String RawDate;
+    protected String rawDate;
 
-    public Event(String taskName, String DateTime) {
+    public Event(String taskName, String dateTime) {
         super(taskName);
-        String[] dt = DateTime.split(" ");
-        this.RawDate = dt[0];
+        String[] dt = dateTime.split(" ");
+        this.rawDate = dt[0];
         this.date = LocalDate.parse(getRawDate());
         this.time = dt[1];
     }
@@ -29,14 +29,14 @@ public class Event extends Task {
     }
 
     public String getRawDate() {
-        return RawDate;
+        return rawDate;
     }
 
     public String getType() {
         return "[E]";
     }
 
-    public String WriteFormat() {
+    public String writeFormat() {
         return getType() + getStatus() + " " + getTaskName() + " /at " + getRawDate() + " " + getTime();
     }
 

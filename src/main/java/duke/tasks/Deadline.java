@@ -1,33 +1,21 @@
-package duke.Tasks;
+package duke.tasks;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
-/**
- * Represents a deadline task.
- */
 public class Deadline extends Task {
     protected LocalDate date;
     protected String time;
-    protected String RawDate;
+    protected String rawDate;
 
-    /**
-     * Constructor for a deadline task.
-     * @param taskName name of deadline.
-     * @param DateTime date and time of deadline.
-     */
-    public Deadline(String taskName, String DateTime) {
+    public Deadline(String taskName, String dateTime) {
         super(taskName);
-        String[] dt = DateTime.split(" ");
-        this.RawDate = dt[0];
+        String[] dt = dateTime.split(" ");
+        this.rawDate = dt[0];
         this.date = LocalDate.parse(getRawDate());
         this.time = dt[1];
     }
 
-    /**
-     * Get the date in d MMM yyyy format, e.g. 05 January 2020.
-     * @return string of date in the format d MMM yyyy
-     */
     public String getDate() {
         return date.format(DateTimeFormatter.ofPattern("d MMM yyyy"));
     }
@@ -40,27 +28,15 @@ public class Deadline extends Task {
         return getDate() + " " + getTime();
     }
 
-    /**
-     * Get the date in yyyy-mm-dd format as in input, e.g. 2020-02-02.
-     * @return string of date in the format yyyy-mm-dd.
-     */
     public String getRawDate() {
-        return RawDate;
+        return rawDate;
     }
 
-    /**
-     * Method to return type of command as a string.
-     * @return string stating type of command.
-     */
     public String getType() {
         return "[D]";
     }
 
-    /**
-     * Method to re-format task into a format readable by parser when loading data from storage file.
-     * @return string in a format readable by parser.
-     */
-    public String WriteFormat() {
+    public String writeFormat() {
         return getType() + getStatus() + " " + getTaskName() + " /by " + getRawDate() + " " + getTime();
     }
 

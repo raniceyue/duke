@@ -1,4 +1,4 @@
-package duke.Exceptions;
+package duke.exceptions;
 
 /**
  * Exception to handle event where modified data cannot be written back into data file.

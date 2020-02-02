@@ -1,4 +1,4 @@
-package duke.Exceptions;
+package duke.exceptions;
 
 /**
  * Exception to handle event where commands to manipulate list have no index provided.

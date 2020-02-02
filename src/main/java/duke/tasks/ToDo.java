@@ -1,4 +1,4 @@
-package duke.Tasks;
+package duke.tasks;
 
 public class ToDo extends Task {
 
@@ -13,7 +13,7 @@ public class ToDo extends Task {
     @Override
     public boolean equals(Object task) {
         if (task instanceof ToDo) {
-            if (((ToDo) task).getTaskName().equals(this.getTaskName())){
+            if (((ToDo) task).getTaskName().equals(this.getTaskName())) {
                 return ((ToDo) task).getStatus() == this.getStatus();
             } else {
                 return false;
