@@ -7,7 +7,7 @@ import duke.util.Storage;
 import duke.util.Ui;
 
 public abstract class Command {
-    public abstract void execute(
+    public abstract String execute(
             TaskList taskList, Ui ui, Storage storage) throws DukeBadIndexException, DukeWriteFailException;
 
     public abstract boolean isExit();

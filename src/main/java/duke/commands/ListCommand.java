@@ -30,8 +30,8 @@ public class ListCommand extends Command {
      * @param ui ui handling running program.
      * @param storage storage handling running program.
      */
-    public void execute(TaskList taskList, Ui ui, Storage storage) {
-        System.out.println(taskList.toString());
+    public String execute(TaskList taskList, Ui ui, Storage storage) {
+        return taskList.toString();
     }
 
     /**

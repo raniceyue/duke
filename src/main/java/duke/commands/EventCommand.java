@@ -38,9 +38,12 @@ public class EventCommand extends Command {
      * @param storage storage handling running program.
      * @throws DukeWriteFailException if the program fails to write the modified data to the storage file.
      */
-    public void execute(TaskList taskList, Ui ui, Storage storage) throws DukeWriteFailException {
-        taskList.addTask(new Event(taskName, dateTime));
+    public String execute(TaskList taskList, Ui ui, Storage storage) throws DukeWriteFailException {
+        Event t = new Event(taskName, dateTime);
+        taskList.addTask(t);
         storage.write(taskList);
+        return Ui.setBorder("ADDED : " + t.toString() + "\n"
+                + "\tYou now have " + taskList.numTasks() + " item(s) on your list.");
     }
 
     /**

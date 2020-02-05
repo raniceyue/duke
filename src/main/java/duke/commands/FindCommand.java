@@ -21,7 +21,7 @@ public class FindCommand extends Command {
      * @param ui ui handling running program.
      * @param storage storage handling running program.
      */
-    public void execute(TaskList taskList, Ui ui, Storage storage) {
+    public String execute(TaskList taskList, Ui ui, Storage storage) {
         TaskList results = taskList.search(keyword);
         String toPrint = "";
         if (results.numTasks() > 0) {
@@ -34,7 +34,7 @@ public class FindCommand extends Command {
         } else if (taskList.numTasks() == 0) {
             toPrint += "You have nothing on your list.";
         }
-        System.out.println(Ui.setBorder(toPrint));
+        return Ui.setBorder(toPrint);
     }
 
     @Override
