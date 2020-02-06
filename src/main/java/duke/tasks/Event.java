@@ -8,6 +8,11 @@ public class Event extends Task {
     protected String time;
     protected String rawDate;
 
+    /**
+     * Constructor for Event.
+     * @param taskName name of event.
+     * @param dateTime date and time when event occurs.
+     */
     public Event(String taskName, String dateTime) {
         super(taskName);
         String[] dt = dateTime.split(" ");

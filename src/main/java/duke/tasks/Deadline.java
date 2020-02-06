@@ -8,6 +8,11 @@ public class Deadline extends Task {
     protected String time;
     protected String rawDate;
 
+    /**
+     * Constructor for Deadline.
+     * @param taskName name of deadline.
+     * @param dateTime date and time of deadline.
+     */
     public Deadline(String taskName, String dateTime) {
         super(taskName);
         String[] dt = dateTime.split(" ");

@@ -37,9 +37,12 @@ public class DeadlineCommand extends Command {
      * @param ui ui handling running program.
      * @param storage storage handling running program.
      */
-    public void execute(TaskList taskList, Ui ui, Storage storage) throws DukeWriteFailException {
-        taskList.addTask(new Deadline(taskName, dateTime));
+    public String execute(TaskList taskList, Ui ui, Storage storage) throws DukeWriteFailException {
+        Deadline t = new Deadline(taskName, dateTime);
+        taskList.addTask(t);
         storage.write(taskList);
+        return Ui.setBorder("ADDED : " + t.toString() + "\n"
+                + "\tYou now have " + taskList.numTasks() + " item(s) on your list.");
     }
 
     /**

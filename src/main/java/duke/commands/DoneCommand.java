@@ -17,10 +17,12 @@ public class DoneCommand extends Command {
         return false;
     }
 
-    public void execute(
+    public String execute(
             TaskList taskList, Ui ui, Storage storage) throws DukeBadIndexException, DukeWriteFailException {
         taskList.setDone(index);
         storage.write(taskList);
+        return Ui.setBorder("I've marked (" + index + ") as done!\n"
+                + "\t(" + index + ") " + taskList.getList().get(index - 1));
     }
 
     @Override

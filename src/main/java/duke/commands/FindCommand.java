@@ -4,8 +4,6 @@ import duke.tasks.TaskList;
 import duke.util.Storage;
 import duke.util.Ui;
 
-import java.util.List;
-
 public class FindCommand extends Command {
     String keyword;
 
@@ -17,7 +15,13 @@ public class FindCommand extends Command {
         return false;
     }
 
-    public void execute(TaskList taskList, Ui ui, Storage storage) {
+    /**
+     * Method to execute 'find' command.
+     * @param taskList task list in running program.
+     * @param ui ui handling running program.
+     * @param storage storage handling running program.
+     */
+    public String execute(TaskList taskList, Ui ui, Storage storage) {
         TaskList results = taskList.search(keyword);
         String toPrint = "";
         if (results.numTasks() > 0) {
@@ -30,7 +34,7 @@ public class FindCommand extends Command {
         } else if (taskList.numTasks() == 0) {
             toPrint += "You have nothing on your list.";
         }
-        System.out.println(Ui.setBorder(toPrint));
+        return Ui.setBorder(toPrint);
     }
 
     @Override

@@ -27,34 +27,44 @@ public class TaskList {
         return getList().indexOf(t) + 1;
     }
 
-    public void addTask(Task t) {
-        getList().add(t);
-        String toPrint = Ui.setBorder("ADDED : " + t + "\n"
-                + "\tYou now have " + numTasks() + " item(s) on your list.");
-        System.out.println(toPrint);
+    /**
+     * Method to add a task into the task list.
+     * @param task task to be added into list.
+     */
+    public void addTask(Task task) {
+        getList().add(task);
     }
 
-    public void setDone(int n) throws DukeBadIndexException {
-        if (n > numTasks()) {
-            throw new DukeBadIndexException(n);
+    /**
+     * Method to mark task at a specified index as done.
+     * @param index of task to be marked as done.
+     * @throws DukeBadIndexException if the index is negative or out of range.
+     */
+    public void setDone(int index) throws DukeBadIndexException {
+        if (index > numTasks()) {
+            throw new DukeBadIndexException(index);
         }
-        getList().get(n - 1).setDone();
-        String toPrint = Ui.setBorder("I've marked (" + n + ") as done!\n"
-                + "\t(" + n + ") " + getList().get(n - 1));
-        System.out.println(toPrint);
+        getList().get(index - 1).setDone();
     }
 
-    public void deleteTask(int n) throws DukeBadIndexException {
-        if (n > numTasks()) {
-            throw new DukeBadIndexException(n);
+    /**
+     * Method to delete task at a specified index.
+     * @param index of task to be deleted.
+     * @throws DukeBadIndexException if the index is negative or out of range.
+     */
+    public void deleteTask(int index) throws DukeBadIndexException {
+        if (index > numTasks()) {
+            throw new DukeBadIndexException(index);
         }
-        Task t = getList().get(n - 1);
-        getList().remove(n - 1);
-        String toPrint = Ui.setBorder("OK, I've removed the task:\n\t\t" + t + "\n"
-                        + "\tYou now have " + (getList().size()) + " task(s) on your list.");
-        System.out.println(toPrint);
+        Task t = getList().get(index - 1);
+        getList().remove(index - 1);
     }
 
+    /**
+     * Method to search for tasks in a task list that have a task name that matches a keyword.
+     * @param keyword to be searched for.
+     * @return TaskList containing tasks with task name that contains keyword.
+     */
     public TaskList search(String keyword) {
         ArrayList<Task> results = new ArrayList<>();
         for (Task t : list) {
