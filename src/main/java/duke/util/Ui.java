@@ -1,7 +1,7 @@
 package duke.util;
 
 public class Ui {
-    public static final String border = "=^..^=   =^..^=   =^..^=    =^..^=    =^..^=    =^..^=    =^..^=\n";
+    public static final String border = "=^..^=   =^..^=   =^..^=\n";
 
     public Ui() {
 
@@ -25,13 +25,13 @@ public class Ui {
     /**
      * Method to print welcome message at start of program.
      */
-    public static void printWelcomeMsg() {
+    public static String welcomeMsg() {
         String logo = " ____        _        \n"
                 + "|  _ \\ _   _| | _____ \n"
                 + "| | | | | | | |/ / _ \\\n"
                 + "| |_| | |_| |   <  __/\n"
                 + "|____/ \\__,_|_|\\_\\___|\n\n";
-        System.out.println("Greetings mortal, my name is\n" + logo + "How may I help you?\n");
+        return "Greetings mortal, my name is\n" + logo + "How may I help you?\n";
     }
 
     public String exitMsg() {
