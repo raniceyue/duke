@@ -17,6 +17,13 @@ public class DoneCommand extends Command {
         return false;
     }
 
+    /**
+     * Method to execute 'done' command.
+     * @param taskList task list in running program.
+     * @param ui ui handling running program.
+     * @param storage storage handling running program.
+     * @throws DukeWriteFailException if the program fails to write the modified data to the storage file.
+     */
     public String execute(
             TaskList taskList, Ui ui, Storage storage) throws DukeBadIndexException, DukeWriteFailException {
         taskList.setDone(index);
