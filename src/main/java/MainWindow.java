@@ -29,7 +29,7 @@ public class MainWindow extends AnchorPane {
     private Image dukeImage = new Image(this.getClass().getResourceAsStream("/images/doyoufart.jpg"));
 
     /**
-     * Initializes chat box GUI with welcome message and welcome image.
+     *  Initializes GUI chat box with welcome message and greeting image.
      */
     @FXML
     public void initialize() {
@@ -43,8 +43,8 @@ public class MainWindow extends AnchorPane {
     }
 
     /**
-     * Creates two dialog boxes, one echoing user input and the other containing duke.Duke's reply and then appends them
-     * to the dialog container. Clears the user input after processing.
+     * Creates two dialog boxes, one echoing user input and the other containing duke.Duke's reply and
+     * then appends them to the dialog container. Clears the user input after processing.
      */
     @FXML
     private void handleUserInput() {
