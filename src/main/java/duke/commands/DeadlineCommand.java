@@ -20,6 +20,7 @@ public class DeadlineCommand extends Command {
      * @param dateTime date and time of deadline.
      */
     public DeadlineCommand(String taskName, String dateTime) {
+        assert !taskName.isEmpty();
         this.taskName = taskName;
         this.dateTime = dateTime;
     }

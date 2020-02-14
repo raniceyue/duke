@@ -28,8 +28,9 @@ public class MainWindow extends AnchorPane {
     private Image userImage = new Image(this.getClass().getResourceAsStream("/images/pufferfish.png"));
     private Image dukeImage = new Image(this.getClass().getResourceAsStream("/images/doyoufart.jpg"));
 
+
     /**
-     * Initialises chat box with welcome message and greeting image.
+     *  Initializes GUI chat box with welcome message and greeting image.
      */
     @FXML
     public void initialize() {

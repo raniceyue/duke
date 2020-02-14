@@ -18,6 +18,7 @@ public class ToDoCommand extends Command {
      * @param taskName name of task to be done.
      */
     public ToDoCommand(String taskName) {
+        assert !taskName.isEmpty();
         this.taskName = taskName;
     }
 
