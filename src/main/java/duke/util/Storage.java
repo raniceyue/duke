@@ -22,21 +22,21 @@ import java.util.List;
  * Represents object that handles storage and loading of data from storage file.
  */
 public class Storage {
-    public static String home = System.getProperty("user.dir");
-    protected Path projectRootPath;
-    protected Path dataFilePath;
+    private Path dataFilePath;
 
     /**
      * Constructor for Storage.
      * @param filePath path of storage file.
      */
     public Storage(String filePath) {
-        this.projectRootPath = Paths.get(home);
+        String home = System.getProperty("user.dir");
+        Path projectRootPath = Paths.get(home);
         this.dataFilePath = Paths.get(projectRootPath.toString(), "data", filePath);
+        assert Files.exists(dataFilePath) : "Path does not exist!!!";
     }
 
     /**
-     * Method that loads data from the storage file.
+     * Loads data from the storage file.
      * @return array list containing tasks loaded from storage file.
      * @throws DukeException if the path is invalid and data cannot be loaded.
      */
@@ -57,7 +57,7 @@ public class Storage {
     }
 
     /**
-     * Method to write changes back into storage file.
+     * Writes changes back into storage file.
      * @param taskList task list to be written back into file.
      * @throws DukeWriteFailException if the data fails to be written into file.
      */

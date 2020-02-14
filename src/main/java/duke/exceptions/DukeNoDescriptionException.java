@@ -1,7 +1,7 @@
 package duke.exceptions;
 
 /**
- * Exception to handle event where command to create task has no description.
+ * Handles event where command to create task has no description.
  */
 public class DukeNoDescriptionException extends DukeException {
     public DukeNoDescriptionException(String taskName) {

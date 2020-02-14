@@ -12,6 +12,9 @@ public class Duke {
     private Storage storage;
     private TaskList taskList;
 
+    /**
+     * Initializes and creates new Duke object.
+     */
     public Duke() {
         this.ui = new Ui();
         this.storage = new Storage("duke.txt");
@@ -22,8 +25,15 @@ public class Duke {
         }
     }
 
-     public String getResponse(String input) {
+    /**
+     * Processes user input and returns a string containing response of Duke program.
+     * @param input user input.
+     * @return string to be printed onto chat box GUI.
+     */
+
+    public String getResponse(String input) {
         try {
+            assert !input.isEmpty() : "YOU DIDN'T SAY ANYTHING!!";
             Command c = Parser.parseCommand(input);
             return c.execute(taskList, ui, storage);
         } catch (DukeException e) {

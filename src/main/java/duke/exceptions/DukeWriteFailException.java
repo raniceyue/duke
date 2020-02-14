@@ -1,7 +1,7 @@
 package duke.exceptions;
 
 /**
- * Exception to handle event where modified data cannot be written back into data file.
+ * Handles event where modified data cannot be written back into data file.
  */
 public class DukeWriteFailException extends DukeException {
     public DukeWriteFailException() {

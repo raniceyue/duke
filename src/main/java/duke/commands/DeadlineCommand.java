@@ -20,23 +20,17 @@ public class DeadlineCommand extends Command {
      * @param dateTime date and time of deadline.
      */
     public DeadlineCommand(String taskName, String dateTime) {
+        assert !taskName.isEmpty();
         this.taskName = taskName;
         this.dateTime = dateTime;
     }
 
     /**
-     * Method to check if command is the exit command.
-     * @return boolean stating if command is an exit command
-     */
-    public boolean isExit() {
-        return false;
-    }
-
-    /**
-     * Method to execute 'deadline' command.
+     * Executes 'deadline' command.
      * @param taskList task list in running program.
      * @param ui ui handling running program.
      * @param storage storage handling running program.
+     * @throws DukeWriteFailException in the event that new task cannot be written back to file.
      */
     public String execute(TaskList taskList, Ui ui, Storage storage) throws DukeWriteFailException, DukeDuplicateTaskException {
         Deadline t = new Deadline(taskName, dateTime);
@@ -51,7 +45,7 @@ public class DeadlineCommand extends Command {
     }
 
     /**
-     * Method to compare 2 commands.
+     * Compares and checks if commands are equal.
      * @param command object to compare command to.
      * @return boolean stating if this command and command are equal.
      */

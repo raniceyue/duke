@@ -7,23 +7,12 @@ public class Ui {
 
     }
 
-    /**
-     * Method to read user input.
-     * @return String containing user input.
-     */
-    /*
-    public String output() {
-
-    }
-    */
-
-
     public static String setBorder(String msg) {
         return border + "\n\t" + msg + "\n\n" + border;
     }
 
     /**
-     * Method to print welcome message at start of program.
+     * Returns string containing welcome message for start of program.
      */
     public static String welcomeMsg() {
         String logo = " ____        _        \n"

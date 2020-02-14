@@ -1,7 +1,7 @@
 package duke.exceptions;
 
 /**
- * Exception to handle indices that are out of range.
+ * Handles indices that are out of range.
  */
 public class DukeBadIndexException extends DukeException {
     /**

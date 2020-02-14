@@ -12,6 +12,7 @@ public class TaskList {
     }
 
     public TaskList(ArrayList<Task> list) {
+        assert !list.isEmpty();
         this.list = list;
     }
 
