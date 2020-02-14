@@ -7,17 +7,6 @@ public class Ui {
 
     }
 
-    /**
-     * Method to read user input.
-     * @return String containing user input.
-     */
-    /*
-    public String output() {
-
-    }
-    */
-
-
     public static String setBorder(String msg) {
         return border + "\n\t" + msg + "\n\n" + border;
     }
