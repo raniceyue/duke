@@ -1,7 +1,7 @@
 package duke.exceptions;
 
 /**
- * Exception to handle event where commands to manipulate list have no index provided.
+ * Handles event where commands to manipulate list have no index provided.
  */
 public class DukeNoIndexException extends DukeException {
     /**

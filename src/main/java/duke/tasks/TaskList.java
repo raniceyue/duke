@@ -29,7 +29,7 @@ public class TaskList {
     }
 
     /**
-     * Method to add a task into the task list.
+     * Adds a task into the task list.
      * @param task task to be added into list.
      */
     public void addTask(Task task) {
@@ -37,7 +37,7 @@ public class TaskList {
     }
 
     /**
-     * Method to mark task at a specified index as done.
+     * Marks task at a specified index as done.
      * @param index of task to be marked as done.
      * @throws DukeBadIndexException if the index is negative or out of range.
      */
@@ -49,20 +49,21 @@ public class TaskList {
     }
 
     /**
-     * Method to delete task at a specified index.
+     * Deletes task at a specified index.
      * @param index of task to be deleted.
      * @throws DukeBadIndexException if the index is negative or out of range.
      */
     public void deleteTask(int index) throws DukeBadIndexException {
-        if (index > numTasks()) {
+        if (index > numTasks() - 1) {
             throw new DukeBadIndexException(index);
         }
+
         Task t = getList().get(index - 1);
-        getList().remove(index - 1);
+        getList().remove(t);
     }
 
     /**
-     * Method to search for tasks in a task list that have a task name that matches a keyword.
+     * Searches for tasks in a task list that have a task name that matches a keyword.
      * @param keyword to be searched for.
      * @return TaskList containing tasks with task name that contains keyword.
      */
@@ -74,6 +75,16 @@ public class TaskList {
             }
         }
         return new TaskList(results);
+    }
+
+    public boolean contains(Task task) {
+        boolean isDuplicate = false;
+        for (Task e : getList()) {
+            if (e.equals(task)) {
+                isDuplicate = true;
+            }
+        }
+        return isDuplicate;
     }
 
     @Override

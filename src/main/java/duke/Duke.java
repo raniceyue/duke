@@ -26,11 +26,10 @@ public class Duke {
     }
 
     /**
-     * Retrieves user input and returns output of Duke program.
-     * @param input is a string of user input.
-     * @return string to be printed out into chat box.
+     * Processes user input and returns response from Duke.
+     * @param input user input.
+     * @return string containing response from Duke to be printed in the GUI.
      */
-
     public String getResponse(String input) {
         try {
             assert !input.isEmpty() : "YOU DIDN'T SAY ANYTHING!!";
