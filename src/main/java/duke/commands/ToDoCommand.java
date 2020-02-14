@@ -1,5 +1,6 @@
 package duke.commands;
 
+import duke.exceptions.DukeDuplicateTaskException;
 import duke.exceptions.DukeWriteFailException;
 import duke.tasks.TaskList;
 import duke.tasks.ToDo;
@@ -27,12 +28,16 @@ public class ToDoCommand extends Command {
      * @param storage storage handling running program.
      * @throws DukeWriteFailException if the program fails to write the modified data to the storage file.
      */
-    public String execute(TaskList taskList, Ui ui, Storage storage) throws DukeWriteFailException {
+    public String execute(TaskList taskList, Ui ui, Storage storage) throws DukeWriteFailException, DukeDuplicateTaskException {
         ToDo t = new ToDo(taskName);
-        taskList.addTask(t);
-        storage.write(taskList);
-        return Ui.setBorder("ADDED : " + t.toString() + "\n"
-                + "\tYou now have " + taskList.numTasks() + " item(s) on your list.");
+        if (!taskList.contains(t)) {
+            taskList.addTask(t);
+            storage.write(taskList);
+            return Ui.setBorder("ADDED : " + t.toString() + "\n"
+                    + "\tYou now have " + taskList.numTasks() + " item(s) on your list.");
+        } else {
+            throw new DukeDuplicateTaskException(t);
+        }
     }
 
     /**
