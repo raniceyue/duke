@@ -54,11 +54,12 @@ public class TaskList {
      * @throws DukeBadIndexException if the index is negative or out of range.
      */
     public void deleteTask(int index) throws DukeBadIndexException {
-        if (index > numTasks()) {
+        if (index > numTasks() - 1) {
             throw new DukeBadIndexException(index);
         }
+
         Task t = getList().get(index - 1);
-        getList().remove(index - 1);
+        getList().remove(t);
     }
 
     /**
@@ -74,6 +75,16 @@ public class TaskList {
             }
         }
         return new TaskList(results);
+    }
+
+    public boolean contains(Task task) {
+        boolean isDuplicate = false;
+        for (Task e : getList()) {
+            if (e.equals(task)) {
+                isDuplicate = true;
+            }
+        }
+        return isDuplicate;
     }
 
     @Override
