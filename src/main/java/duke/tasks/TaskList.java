@@ -54,7 +54,7 @@ public class TaskList {
      * @throws DukeBadIndexException if the index is negative or out of range.
      */
     public void deleteTask(int index) throws DukeBadIndexException {
-        if (index > numTasks() - 1) {
+        if (index > numTasks()) {
             throw new DukeBadIndexException(index);
         }
 

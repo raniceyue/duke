@@ -49,11 +49,7 @@ public class Deadline extends Task {
     public boolean equals(Object task) {
         if (task instanceof Deadline) {
             if (((Deadline) task).getTaskName().equals(this.getTaskName())) {
-                if (((Deadline) task).getDateTime().equals(this.getDateTime())) {
-                    return ((Deadline) task).getStatus().equals(this.getStatus());
-                } else {
-                    return false;
-                }
+                return ((Deadline) task).getDateTime().equals(this.getDateTime());
             } else {
                 return false;
             }

@@ -13,11 +13,7 @@ public class ToDo extends Task {
     @Override
     public boolean equals(Object task) {
         if (task instanceof ToDo) {
-            if (((ToDo) task).getTaskName().equals(this.getTaskName())) {
-                return ((ToDo) task).getStatus().equals(this.getStatus());
-            } else {
-                return false;
-            }
+            return ((ToDo) task).getTaskName().equals(this.getTaskName());
         } else {
             return false;
         }

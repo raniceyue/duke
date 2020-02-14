@@ -49,11 +49,7 @@ public class Event extends Task {
     public boolean equals(Object task) {
         if (task instanceof Event) {
             if (((Event)task).getTaskName().equals(this.getTaskName())) {
-                if (((Event) task).getDateTime().equals(this.getDateTime())) {
-                    return ((Event) task).getStatus() == this.getStatus();
-                } else {
-                    return false;
-                }
+                return (((Event) task).getDateTime().equals(this.getDateTime()));
             } else {
                 return false;
             }
