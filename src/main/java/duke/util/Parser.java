@@ -145,7 +145,7 @@ public class Parser {
      * @throws DukeBadIndexException if the index is out of range.
      */
     public static void isValidIndex(int index) throws DukeBadIndexException {
-        if (index == 0 || index < 0) {
+        if (index <= 0) {
             throw new DukeBadIndexException(index);
         }
     }

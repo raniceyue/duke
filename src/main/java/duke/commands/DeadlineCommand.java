@@ -1,5 +1,6 @@
 package duke.commands;
 
+import duke.exceptions.DukeDuplicateTaskException;
 import duke.exceptions.DukeWriteFailException;
 import duke.tasks.Deadline;
 import duke.tasks.TaskList;
@@ -37,12 +38,16 @@ public class DeadlineCommand extends Command {
      * @param ui ui handling running program.
      * @param storage storage handling running program.
      */
-    public String execute(TaskList taskList, Ui ui, Storage storage) throws DukeWriteFailException {
+    public String execute(TaskList taskList, Ui ui, Storage storage) throws DukeWriteFailException, DukeDuplicateTaskException {
         Deadline t = new Deadline(taskName, dateTime);
-        taskList.addTask(t);
-        storage.write(taskList);
-        return Ui.setBorder("ADDED : " + t.toString() + "\n"
-                + "\tYou now have " + taskList.numTasks() + " item(s) on your list.");
+        if (!taskList.contains(t)) {
+            taskList.addTask(t);
+            storage.write(taskList);
+            return Ui.setBorder("ADDED : " + t.toString() + "\n"
+                    + "\tYou now have " + taskList.numTasks() + " item(s) on your list.");
+        } else {
+            throw new DukeDuplicateTaskException(t);
+        }
     }
 
     /**
