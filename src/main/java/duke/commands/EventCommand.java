@@ -19,6 +19,7 @@ public class EventCommand extends Command {
      * @param dateTime date and time of event occurrence.
      */
     public EventCommand(String taskName, String dateTime) {
+        assert !taskName.isEmpty();
         this.taskName = taskName;
         this.dateTime = dateTime;
     }
