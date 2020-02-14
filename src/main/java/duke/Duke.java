@@ -13,7 +13,7 @@ public class Duke {
     private TaskList taskList;
 
     /**
-     * Creates new Duke object to be run by the launcher.
+     * Initializes and creates new Duke object.
      */
     public Duke() {
         this.ui = new Ui();
@@ -26,11 +26,10 @@ public class Duke {
     }
 
     /**
-     * Retrieves user input and returns output of Duke program.
-     * @param input is a string of user input.
-     * @return string to be printed out into chat box.
+     * Processes user input and returns a string containing response of Duke program.
+     * @param input user input.
+     * @return string to be printed onto chat box GUI.
      */
-
     public String getResponse(String input) {
         try {
             assert !input.isEmpty() : "YOU DIDN'T SAY ANYTHING!!";

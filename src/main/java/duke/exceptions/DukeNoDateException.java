@@ -1,11 +1,11 @@
 package duke.exceptions;
 
 /**
- * Exception to handle event where command is missing date input.
+ * Handles event where command is missing date input.
  */
 public class DukeNoDateException extends DukeException {
     /**
-     * Method to customise exception message.
+     * Customises exception message.
      * @param taskName name of task with missing date.
      */
     public DukeNoDateException(String taskName) {

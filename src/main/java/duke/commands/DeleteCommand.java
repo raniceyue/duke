@@ -14,16 +14,13 @@ public class DeleteCommand extends Command {
         this.index = index;
     }
 
-    public boolean isExit() {
-        return false;
-    }
-
     /**
-     * Method to execute 'delete' command.
+     * Executes 'delete' command.
      * @param taskList task list in running program.
      * @param ui ui handling running program.
      * @param storage storage handling running program.
-     * @throws DukeWriteFailException if the program fails to write the modified data to the storage file.
+     * @throws DukeWriteFailException in the event that new task cannot be written back to file.
+     * @throws DukeBadIndexException if index is <=0 or greater than the number of tasks in the task list.
      */
     public String execute(
             TaskList taskList, Ui ui, Storage storage) throws DukeBadIndexException, DukeWriteFailException {
@@ -34,6 +31,11 @@ public class DeleteCommand extends Command {
                 + "\tYou now have " + (taskList.getList().size()) + " task(s) on your list.");
     }
 
+    /**
+     * Compares and checks if commands are equal.
+     * @param command object to compare command to.
+     * @return boolean stating if this command and command are equal.
+     */
     @Override
     public boolean equals(Object command) {
         if (command instanceof DeleteCommand) {

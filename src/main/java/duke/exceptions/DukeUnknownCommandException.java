@@ -1,7 +1,7 @@
 package duke.exceptions;
 
 /**
- * Exception to handle unexpected input.
+ * Handles unexpected input.
  */
 public class DukeUnknownCommandException extends DukeException {
     public DukeUnknownCommandException() {

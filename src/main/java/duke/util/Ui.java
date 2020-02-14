@@ -12,7 +12,7 @@ public class Ui {
     }
 
     /**
-     * Method to print welcome message at start of program.
+     * Returns string containing welcome message for start of program.
      */
     public static String welcomeMsg() {
         String logo = " ____        _        \n"
