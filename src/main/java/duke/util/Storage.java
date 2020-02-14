@@ -36,7 +36,7 @@ public class Storage {
     }
 
     /**
-     * Method that loads data from the storage file.
+     * Loads data from the storage file.
      * @return array list containing tasks loaded from storage file.
      * @throws DukeException if the path is invalid and data cannot be loaded.
      */
@@ -57,7 +57,7 @@ public class Storage {
     }
 
     /**
-     * Method to write changes back into storage file.
+     * Writes changes back into storage file.
      * @param taskList task list to be written back into file.
      * @throws DukeWriteFailException if the data fails to be written into file.
      */
