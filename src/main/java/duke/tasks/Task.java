@@ -5,7 +5,6 @@ public class Task {
     protected Boolean status;
 
     public Task(String taskName) {
-        assert !taskName.isEmpty();
         this.taskName = taskName;
         this.status = false;
     }

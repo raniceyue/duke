@@ -50,7 +50,7 @@ public class Deadline extends Task {
         if (task instanceof Deadline) {
             if (((Deadline) task).getTaskName().equals(this.getTaskName())) {
                 if (((Deadline) task).getDateTime().equals(this.getDateTime())) {
-                    return ((Deadline) task).getStatus().equals(this.getStatus());
+                    return ((Deadline) task).getStatus() == this.getStatus();
                 } else {
                     return false;
                 }

@@ -13,7 +13,6 @@ public class DoneCommand extends Command {
         this.index = index;
     }
 
-
     /**
      * Executes'done' command.
      * @param taskList task list in running program.

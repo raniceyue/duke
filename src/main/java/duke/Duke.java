@@ -13,7 +13,7 @@ public class Duke {
     private TaskList taskList;
 
     /**
-     * Creates new Duke object to be run by the launcher.
+     * Constructor for Duke program.
      */
     public Duke() {
         this.ui = new Ui();
@@ -32,7 +32,6 @@ public class Duke {
      */
     public String getResponse(String input) {
         try {
-            assert !input.isEmpty() : "YOU DIDN'T SAY ANYTHING!!";
             Command c = Parser.parseCommand(input);
             return c.execute(taskList, ui, storage);
         } catch (DukeException e) {

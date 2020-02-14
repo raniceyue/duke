@@ -14,7 +14,7 @@ public class ToDo extends Task {
     public boolean equals(Object task) {
         if (task instanceof ToDo) {
             if (((ToDo) task).getTaskName().equals(this.getTaskName())) {
-                return ((ToDo) task).getStatus().equals(this.getStatus());
+                return ((ToDo) task).getStatus() == this.getStatus();
             } else {
                 return false;
             }

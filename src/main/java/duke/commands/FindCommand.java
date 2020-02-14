@@ -8,7 +8,6 @@ public class FindCommand extends Command {
     String keyword;
 
     public FindCommand(String keyword) {
-        assert !keyword.isEmpty();
         this.keyword = keyword;
     }
 

@@ -13,7 +13,6 @@ public class DeleteCommand extends Command {
         this.index = index;
     }
 
-
     /**
      * Executes 'delete' command.
      * @param taskList task list in running program.

@@ -22,17 +22,17 @@ import java.util.List;
  * Represents object that handles storage and loading of data from storage file.
  */
 public class Storage {
-    private Path dataFilePath;
+    public static String home = System.getProperty("user.dir");
+    protected Path projectRootPath;
+    protected Path dataFilePath;
 
     /**
      * Constructor for Storage.
      * @param filePath path of storage file.
      */
     public Storage(String filePath) {
-        String home = System.getProperty("user.dir");
-        Path projectRootPath = Paths.get(home);
+        this.projectRootPath = Paths.get(home);
         this.dataFilePath = Paths.get(projectRootPath.toString(), "data", filePath);
-        assert Files.exists(dataFilePath) : "Path does not exist!!!";
     }
 
     /**
