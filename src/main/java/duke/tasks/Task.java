@@ -4,6 +4,10 @@ public class Task {
     protected String taskName;
     protected Boolean status;
 
+    /**
+     * Constructs new task object with name taskName.
+     * @param taskName name of new task.
+     */
     public Task(String taskName) {
         assert !taskName.isEmpty();
         this.taskName = taskName;

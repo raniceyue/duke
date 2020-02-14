@@ -9,6 +9,7 @@ import duke.util.Ui;
 
 public abstract class Command {
     public abstract String execute(
-            TaskList taskList, Ui ui, Storage storage) throws DukeBadIndexException, DukeWriteFailException, DukeDuplicateTaskException;
+            TaskList taskList, Ui ui, Storage storage) throws DukeBadIndexException, DukeWriteFailException,
+            DukeDuplicateTaskException;
 
 }

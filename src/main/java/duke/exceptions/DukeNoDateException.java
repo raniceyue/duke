@@ -5,7 +5,7 @@ package duke.exceptions;
  */
 public class DukeNoDateException extends DukeException {
     /**
-     * Customises exception message.
+     * Customises exception message according to task name.
      * @param taskName name of task with missing date.
      */
     public DukeNoDateException(String taskName) {

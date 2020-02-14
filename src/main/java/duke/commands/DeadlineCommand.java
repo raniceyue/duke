@@ -32,9 +32,10 @@ public class DeadlineCommand extends Command {
      * @param storage storage handling running program.
      * @throws DukeWriteFailException in the event that new task cannot be written back to file.
      */
-    public String execute(TaskList taskList, Ui ui, Storage storage) throws DukeWriteFailException, DukeDuplicateTaskException {
+    public String execute(
+            TaskList taskList, Ui ui, Storage storage) throws DukeWriteFailException, DukeDuplicateTaskException {
         Deadline t = new Deadline(taskName, dateTime);
-        if (!taskList.contains(t)) {
+        if (!taskList.isDuplicate(t)) {
             taskList.addTask(t);
             storage.write(taskList);
             return Ui.setBorder("ADDED : " + t.toString() + "\n"

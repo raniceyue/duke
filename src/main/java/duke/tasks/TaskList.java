@@ -77,7 +77,12 @@ public class TaskList {
         return new TaskList(results);
     }
 
-    public boolean contains(Task task) {
+    /**
+     * Checks if task list contains task task.
+     * @param task to be checked
+     * @return
+     */
+    public boolean isDuplicate(Task task) {
         boolean isDuplicate = false;
         for (Task e : getList()) {
             if (e.equals(task)) {

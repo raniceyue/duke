@@ -29,9 +29,10 @@ public class ToDoCommand extends Command {
      * @param storage storage handling running program.
      * @throws DukeWriteFailException if the program fails to write the modified data to the storage file.
      */
-    public String execute(TaskList taskList, Ui ui, Storage storage) throws DukeWriteFailException, DukeDuplicateTaskException {
+    public String execute(
+            TaskList taskList, Ui ui, Storage storage) throws DukeWriteFailException, DukeDuplicateTaskException {
         ToDo t = new ToDo(taskName);
-        if (!taskList.contains(t)) {
+        if (!taskList.isDuplicate(t)) {
             taskList.addTask(t);
             storage.write(taskList);
             return Ui.setBorder("ADDED : " + t.toString() + "\n"
