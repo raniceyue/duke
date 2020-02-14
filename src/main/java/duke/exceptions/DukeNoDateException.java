@@ -1,7 +1,7 @@
 package duke.exceptions;
 
 /**
- * Exception to handle event where command is missing date input.
+ * Handles event where command is missing date input.
  */
 public class DukeNoDateException extends DukeException {
     /**

@@ -12,6 +12,9 @@ public class Duke {
     private Storage storage;
     private TaskList taskList;
 
+    /**
+     * Constructor for Duke program.
+     */
     public Duke() {
         this.ui = new Ui();
         this.storage = new Storage("duke.txt");
@@ -22,7 +25,12 @@ public class Duke {
         }
     }
 
-     public String getResponse(String input) {
+    /**
+     * Processes user input and returns response from Duke.
+     * @param input user input.
+     * @return string containing response from Duke to be printed in the GUI.
+     */
+    public String getResponse(String input) {
         try {
             Command c = Parser.parseCommand(input);
             return c.execute(taskList, ui, storage);

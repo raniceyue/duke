@@ -21,15 +21,7 @@ public class ToDoCommand extends Command {
     }
 
     /**
-     * Method to check if command is the exit command.
-     * @return boolean stating if command is an exit command
-     */
-    public boolean isExit() {
-        return false;
-    }
-
-    /**
-     * Method to execute 'todo' command.
+     * Executes 'todo' command.
      * @param taskList task list in running program.
      * @param ui ui handling running program.
      * @param storage storage handling running program.
@@ -44,7 +36,7 @@ public class ToDoCommand extends Command {
     }
 
     /**
-     * Method to compare 2 commands.
+     * Compares if 2 commands are equal.
      * @param command object to compare command to.
      * @return boolean stating if this command and command are equal.
      */
