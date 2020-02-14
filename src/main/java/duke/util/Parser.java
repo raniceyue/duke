@@ -29,7 +29,7 @@ public class Parser {
     protected String command;
 
     /**
-     * Method to parse a single command.
+     * Parses single command.
      * @param s string to be parsed.
      * @return parsed command as a Command object.
      * @throws DukeException if the command is invalid.
@@ -102,7 +102,7 @@ public class Parser {
     }
 
     /**
-     * Method to parse a line in the storage file.
+     * Parses a line in the storage file.
      * @param e string to be parsed.
      * @return parsed data in storage file as a Task object.
      * @throws DukeException if the data in the file is in the wrong format and cannot be parsed.
@@ -140,18 +140,18 @@ public class Parser {
      */
 
     /**
-     * Method to check if index input by user is within a valid range.
+     * Checks if index input by user is within a valid range.
      * @param index to be checked.
      * @throws DukeBadIndexException if the index is out of range.
      */
     public static void isValidIndex(int index) throws DukeBadIndexException {
-        if (index == 0 || index < 0) {
+        if (index <= 0) {
             throw new DukeBadIndexException(index);
         }
     }
 
     /**
-     * Method to check if date and time input by user is in the correct format.
+     * Checks if date and time input by user is in the correct format.
      * @param dateTime string to be checked
      * @throws DukeBadDateException if the date is in the wrong format.
      * @throws DukeBadDateTimeException if the date and time are in the wrong format.

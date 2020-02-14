@@ -11,12 +11,8 @@ public class FindCommand extends Command {
         this.keyword = keyword;
     }
 
-    public boolean isExit() {
-        return false;
-    }
-
     /**
-     * Method to execute 'find' command.
+     * Executes 'find' command.
      * @param taskList task list in running program.
      * @param ui ui handling running program.
      * @param storage storage handling running program.
@@ -37,6 +33,11 @@ public class FindCommand extends Command {
         return Ui.setBorder(toPrint);
     }
 
+    /**
+     * Compares and checks if commands are equal.
+     * @param command object to compare command to.
+     * @return boolean stating if this command and command are equal.
+     */
     @Override
     public boolean equals(Object command) {
         return command instanceof FindCommand;

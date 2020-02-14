@@ -1,7 +1,7 @@
 package duke.exceptions;
 
 /**
- * Exception to handle when text in data file is not formatted correctly.
+ * Handles when text in data file is not formatted correctly.
  */
 public class DukeBadFileException extends DukeException {
     public DukeBadFileException() {
