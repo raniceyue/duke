@@ -1,7 +1,7 @@
 # User Guide
 This guide covers the features and usage of the Aeugh, Ranice's Duke Project... application.
 
-### Contents
+### Overview
 1. [Purpose]()
 2. [Features]()
 3. [Usage]()
@@ -37,37 +37,25 @@ Task list data is saved into a `.txt` data file to be loaded into the applicatio
 
   Describe action and its outcome.
 
-  Example of usage: 
-
-  `todo (task name)`
-
-  Expected outcome:
-
-  `outcome`
+  |Syntax|Example|Outcome|
+  |------|-------|--------|
+  |`todo (task name)`| `todo homework`||
 
 + #### `deadline` - Adds 'Deadline' task into task list.
 
   Describe action and its outcome.
 
-  Example of usage: 
-
-  `deadline (task name) /by [YYYY-MM-DD] [HHMM]`
-
-  Expected outcome:
-
-  `outcome`
+    |Syntax|Example|Outcome|
+    |------|-------|--------|
+  |`deadline (task name) /by [YYYY-MM-DD] [HHMM]`|`deadline assignment /by 2020-02-01 2359`||
 
 + #### `event` - Adds 'Event' task into task list.
 
   Describe action and its outcome.
 
-  Example of usage: 
-
-  `event (task name) /by [YYYY-MM-DD] [HHMM]`
-
-  Expected outcome:
-
-  `outcome`
+  |Syntax|Example|Outcome|
+  |------|-------|--------|
+  |`event (task name) /by [YYYY-MM-DD] [HHMM]`|`event formal dinner /at 2020-02-01 2359`||
 
 ### Task List Manipulation
 
@@ -75,49 +63,35 @@ Task list data is saved into a `.txt` data file to be loaded into the applicatio
 
   `delete` helps to delete tasks from the task list, given the index of the task to be deleted.
 
-  Example of usage: 
+  |Syntax|Example|Outcome|
+  |------|-------|--------|
+  |`delete [task index]`| `delete 3`||
 
-  `delete [task index]`
-
-  Expected outcome:
-
-  `outcome`
 
 + #### `done` - Marks a task as 'done' in the task list.
 
   `done` helps to mark a task as 'done' in the task list, given the index of the task to be marked as 'done'.
 
-  Example of usage: 
+  |Syntax|Example|Outcome|
+  |------|-------|--------|
+  |`delete [task index]`| `done 3`||
 
-  `done [task index]`
-
-  Expected outcome:
-
-  `outcome`
 
 + #### `list` - Prints out entire task list.
 
   `list` helps to display entire task list for user viewing in the GUI.
 
-  Example of usage: 
+  |Syntax|Example|Outcome|
+  |------|-------|--------|
+  |`list`| `list`||
 
-  `list`
-
-  Expected outcome:
-
-  `outcome`
-
-+ #### `find` - Helps to search for a task in the task list given a singular keyword.
++ #### `find` - Helps to search for a task in the task list given keywords.
 
   `find` helps to search for a task in the task list given a singular keyword. The tasks are searched by their task names, and any task with a task name containing the specified keyword, will be listed out in the GUI for user viewing.
 
-  Example of usage: 
-
-  `find [keyword]`
-
-  Expected outcome:
-
-  `outcome`
+  |Syntax|Example|Outcome|
+  |------|-------|--------|
+  |`find [keyword]`| `find book`||
 
 ## Glossary
 
