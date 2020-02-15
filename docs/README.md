@@ -5,7 +5,6 @@ This guide covers the features and usage of the Aeugh, Ranice's Duke Project... 
 1. [Purpose]()
 2. [Features]()
 3. [Usage]()
-4. [Glossary]()
 
 ## Purpose
 Aeugh, Ranice's Duke Project... is a simple task managing application. It features a simple Graphical User Interface (GUI) and Command Line Interface (CLI) for user commands.
@@ -37,62 +36,84 @@ Task list data is saved into a `.txt` data file to be loaded into the applicatio
 
   Describe action and its outcome.
 
-  |Syntax|Example|Outcome|
-  |------|-------|--------|
-  |`todo (task name)`| `todo homework`||
+  |Syntax|Example|
+  |------|-------|
+  |`todo (task name)`| `todo homework`|
+  
+  ![](/docs/images/todoDemo.png/)
 
 + #### `deadline` - Adds 'Deadline' task into task list.
 
   Describe action and its outcome.
 
-    |Syntax|Example|Outcome|
-    |------|-------|--------|
+  |Syntax|Example|
+  |------|-------|
   |`deadline (task name) /by [YYYY-MM-DD] [HHMM]`|`deadline assignment /by 2020-02-01 2359`||
+  
+  ![](/docs/images/deadlineDemo.png/)
+
 
 + #### `event` - Adds 'Event' task into task list.
 
   Describe action and its outcome.
 
-  |Syntax|Example|Outcome|
-  |------|-------|--------|
+  |Syntax|Example|
+  |------|-------|
   |`event (task name) /by [YYYY-MM-DD] [HHMM]`|`event formal dinner /at 2020-02-01 2359`||
+  
+  ![](/docs/images/eventDemo.png/)
 
 ### Task List Manipulation
-
-+ #### `delete` - Deletes a task from the task list.
-
-  `delete` helps to delete tasks from the task list, given the index of the task to be deleted.
-
-  |Syntax|Example|Outcome|
-  |------|-------|--------|
-  |`delete [task index]`| `delete 3`||
-
-
-+ #### `done` - Marks a task as 'done' in the task list.
-
-  `done` helps to mark a task as 'done' in the task list, given the index of the task to be marked as 'done'.
-
-  |Syntax|Example|Outcome|
-  |------|-------|--------|
-  |`delete [task index]`| `done 3`||
 
 
 + #### `list` - Prints out entire task list.
 
   `list` helps to display entire task list for user viewing in the GUI.
 
-  |Syntax|Example|Outcome|
-  |------|-------|--------|
-  |`list`| `list`||
+  |Syntax|Example|
+  |------|-------|
+  |`list`| `list`|
+  
+  ![](/docs/images/listDemo.png/)
+
 
 + #### `find` - Helps to search for a task in the task list given keywords.
 
   `find` helps to search for a task in the task list given a singular keyword. The tasks are searched by their task names, and any task with a task name containing the specified keyword, will be listed out in the GUI for user viewing.
 
-  |Syntax|Example|Outcome|
-  |------|-------|--------|
-  |`find [keyword]`| `find book`||
+  |Syntax|Example|
+  |------|-------|
+  |`find [keyword]`| `find dinner`|
+  
+  ![](/docs/images/findDemo.png/)
 
-## Glossary
+  
++ #### `done` - Marks a task as 'done' in the task list.
+
+  `done` helps to mark a task as 'done' in the task list, given the index of the task to be marked as 'done'.
+
+  |Syntax|Example|
+  |------|-------|
+  |`delete [task index]`| `done 1`|
+  
+  ![](/docs/images/doneDemo.png/)
+
+
++ #### `delete` - Deletes a task from the task list.
+
+  `delete` helps to delete tasks from the task list, given the index of the task to be deleted.
+
+  |Syntax|Example|
+  |------|-------|
+  |`delete [task index]`| `delete 1`|
+
+  ![](/docs/images/deleteDemo.png/)
+
+
+
+
+
+
+
 
 
