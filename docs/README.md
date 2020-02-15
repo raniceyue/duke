@@ -17,15 +17,15 @@ This application was developed for the CS2103T individual project assignment.
 
 ## Features 
 
-### Task Types: To-Dos, Deadlines, and Events
++ ### Task Types: To-Dos, Deadlines, and Events
 
 There are 3 different types of tasks that can recorded by the task list: To-Dos, Deadlines, and Events. To-Dos are tasks that are not bounded by a date and time. Deadlines and Events are bounded by a date and time. 
 
-### Task List 
++ ### Task List 
 
 This application has an in bult task list that keeps track of all tasks. Each task is assigned an index number dependant on the time at which the task was added into the list, in ascending order. The task list also keeps track of the status of each task, if the task has been completed or not. Tasks can be mark as done, as well as removed from the list. The task list can be printed out into the GUI for user viewing, and the task list features a simple search function to search for tasks in the list.
 
-### Data Saving
++ ### Data Saving
 
 Task list data is saved into a `.txt` data file to be loaded into the application in every session. At the end of the session, all changes to the task list will be written back to the data file for use in the next session.
 
@@ -33,90 +33,92 @@ Task list data is saved into a `.txt` data file to be loaded into the applicatio
 
 ### Adding Tasks
 
-#### `todo` - Describe action
++ #### `todo` - Adds 'To-Do' task into task list.
 
-Describe action and its outcome.
+  Describe action and its outcome.
 
-Example of usage: 
+  Example of usage: 
 
-`keyword (optional arguments)`
+  `todo (task name)`
 
-Expected outcome:
+  Expected outcome:
 
-`outcome`
+  `outcome`
 
-#### `deadline` - Describe action
++ #### `deadline` - Adds 'Deadline' task into task list.
 
-Describe action and its outcome.
+  Describe action and its outcome.
 
-Example of usage: 
+  Example of usage: 
 
-`keyword (optional arguments)`
+  `deadline (task name) /by [YYYY-MM-DD] [HHMM]`
 
-Expected outcome:
+  Expected outcome:
 
-`outcome`
+  `outcome`
 
-#### `event` - Describe action
++ #### `event` - Adds 'Event' task into task list.
 
-Describe action and its outcome.
+  Describe action and its outcome.
 
-Example of usage: 
+  Example of usage: 
 
-`keyword (optional arguments)`
+  `event (task name) /by [YYYY-MM-DD] [HHMM]`
 
-Expected outcome:
+  Expected outcome:
 
-`outcome`
+  `outcome`
 
 ### Task List Manipulation
 
-#### `delete` - Describe action
++ #### `delete` - Deletes a task from the task list.
 
-Describe action and its outcome.
+  `delete` helps to delete tasks from the task list, given the index of the task to be deleted.
 
-Example of usage: 
+  Example of usage: 
 
-`keyword (optional arguments)`
+  `delete [task index]`
 
-Expected outcome:
+  Expected outcome:
 
-`outcome`
+  `outcome`
 
-#### `done` - Describe action
++ #### `done` - Marks a task as 'done' in the task list.
 
-Describe action and its outcome.
+  `done` helps to mark a task as 'done' in the task list, given the index of the task to be marked as 'done'.
 
-Example of usage: 
+  Example of usage: 
 
-`keyword (optional arguments)`
+  `done [task index]`
 
-Expected outcome:
+  Expected outcome:
 
-`outcome`
+  `outcome`
 
-#### `list` - Describe action
++ #### `list` - Prints out entire task list.
 
-Describe action and its outcome.
+  `list` helps to display entire task list for user viewing in the GUI.
 
-Example of usage: 
+  Example of usage: 
 
-`keyword (optional arguments)`
+  `list`
 
-Expected outcome:
+  Expected outcome:
 
-`outcome`
+  `outcome`
 
-#### `find` - Describe action
++ #### `find` - Helps to search for a task in the task list given a singular keyword.
 
-Describe action and its outcome.
+  `find` helps to search for a task in the task list given a singular keyword. The tasks are searched by their task names, and any task with a task name containing the specified keyword, will be listed out in the GUI for user viewing.
 
-Example of usage: 
+  Example of usage: 
 
-`keyword (optional arguments)`
+  `find [keyword]`
 
-Expected outcome:
+  Expected outcome:
 
-`outcome`
+  `outcome`
 
 ## Glossary
+
+
