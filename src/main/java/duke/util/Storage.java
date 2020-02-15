@@ -3,11 +3,7 @@ package duke.util;
 import duke.exceptions.DukeBadPathException;
 import duke.exceptions.DukeException;
 import duke.exceptions.DukeWriteFailException;
-import duke.tasks.Deadline;
-import duke.tasks.Event;
-import duke.tasks.Task;
-import duke.tasks.TaskList;
-import duke.tasks.ToDo;
+import duke.tasks.*;
 
 import java.io.BufferedWriter;
 import java.io.FileWriter;

@@ -108,33 +108,36 @@ public class Parser {
      * @throws DukeException if the data in the file is in the wrong format and cannot be parsed.
      */
     public static Task parseFileLine(String e) throws DukeException {
-        assert !e.isEmpty() : "FILE CONTAINS EMPTY STRING!";
-        String taskType = e.substring(0, 3);
-        String taskStatus = e.substring(3, 6);
-        String taskDetails = e.substring(7);
-        Task t;
-        switch (taskType) {
-        case "[T]":
-            t = new ToDo(taskDetails);
-            break;
-        case "[E]": {
-            String[] details = taskDetails.split(" /at ");
-            t = new Event(details[0], details[1]);
-            break;
-        }
-        case "[D]": {
-            String[] details = taskDetails.split(" /by ");
-            t = new Deadline(details[0], details[1]);
-            break;
-        }
-        default:
+        try {
+            assert !e.isEmpty() : "FILE CONTAINS EMPTY STRING!";
+            String taskType = e.substring(0, 3);
+            String taskStatus = e.substring(3, 6);
+            String taskDetails = e.substring(7);
+            Task t;
+            switch (taskType) {
+                case "[T]":
+                    t = new ToDo(taskDetails);
+                    break;
+                case "[E]": {
+                    String[] details = taskDetails.split(" /at ");
+                    t = new Event(details[0], details[1]);
+                    break;
+                }
+                case "[D]": {
+                    String[] details = taskDetails.split(" /by ");
+                    t = new Deadline(details[0], details[1]);
+                    break;
+                }
+                default:
+                    throw new DukeBadFileException();
+            }
+            if (taskStatus.equals("[X]")) {
+                t.setDone();
+            }
+            return t;
+        } catch (Exception t) {
             throw new DukeBadFileException();
         }
-
-        if (taskStatus.equals("[X]")) {
-            t.setDone();
-        }
-        return t;
     }
 
     /*

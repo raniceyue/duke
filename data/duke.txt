@@ -1,2 +1,4 @@
-[T][X]  ass
-[T][X]  bruh
+[T][X]  Homework
+[T][X]  take temperature
+[E][ ] Football ICG /at 2020-02-01 1400
+[D][ ] cs2103 h/w /by 2020-02-13 2359

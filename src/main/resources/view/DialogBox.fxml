@@ -10,7 +10,7 @@
 
 <fx:root alignment="TOP_RIGHT" type="javafx.scene.layout.HBox" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
     <children>
-        <Label fx:id="dialog" ellipsisString="there aint no space dawg..." maxHeight="Infinity" rotate="2.0" text="Label" textFill="#cd3d3d" HBox.hgrow="ALWAYS">
+        <Label fx:id="dialog" wrapText="true" maxHeight="Infinity" rotate="2.0" text="Label" textFill="#cd3d3d" HBox.hgrow="ALWAYS">
          <HBox.margin>
             <Insets left="20.0" right="20.0" />
          </HBox.margin></Label>

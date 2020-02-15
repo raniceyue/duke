@@ -12,7 +12,6 @@ public class TaskList {
     }
 
     public TaskList(ArrayList<Task> list) {
-        assert !list.isEmpty();
         this.list = list;
     }
 
@@ -80,7 +79,7 @@ public class TaskList {
     /**
      * Checks if task list contains task task.
      * @param task to be checked
-     * @return
+     * @return boolean indicating if diplicate exists in task list.
      */
     public boolean isDuplicate(Task task) {
         boolean isDuplicate = false;
@@ -98,9 +97,9 @@ public class TaskList {
         if (numTasks() == 0) {
             toPrint = Ui.setBorder("You have nothing on your list.");
         } else {
-            StringBuilder msg = new StringBuilder("Here is your list:\n");
+            StringBuilder msg = new StringBuilder("Here is your list:\n\n");
             for (Task e : list) {
-                msg.append("\t(").append(getTaskIndex(e)).append(") ").append(e.toString()).append("\n");
+                msg.append("(").append(getTaskIndex(e)).append(") ").append(e.toString()).append("\n");
             }
             toPrint += Ui.setBorder(msg.toString());
         }
