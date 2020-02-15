@@ -24,7 +24,7 @@ public class FindCommand extends Command {
         if (results.numTasks() > 0) {
             toPrint += "Here are the matching tasks in your list!!\n";
             for (int i = 0; i < results.numTasks(); i++) {
-                toPrint += "\t(" + (i + 1) + ") " + results.getList().get(i) + "\n";
+                toPrint += "(" + (i + 1) + ") " + results.getList().get(i) + "\n";
             }
         } else if (results.numTasks() == 0) {
             toPrint += "There are no matching results in your list.";

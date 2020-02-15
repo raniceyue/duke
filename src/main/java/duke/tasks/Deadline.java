@@ -30,7 +30,7 @@ public class Deadline extends Task {
     }
 
     public String getDateTime() {
-        return getDate() + " " + getTime();
+        return getDate() + " @ " + getTime();
     }
 
     public String getRawDate() {

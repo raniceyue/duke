@@ -27,7 +27,7 @@ public class DeleteCommand extends Command {
             String t = taskList.getList().get(index - 1).toString();
             taskList.deleteTask(index);
             storage.write(taskList);
-            return Ui.setBorder("OK, I've removed the task:\n\t\t" + t + "\n"
+            return Ui.setBorder("OK, I've removed the task:\n\n" + t + "\n\n"
                     + "\tYou now have " + (taskList.getList().size()) + " task(s) on your list.");
         } else {
             throw new DukeBadIndexException(index);

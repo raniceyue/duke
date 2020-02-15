@@ -35,7 +35,7 @@ public class ToDoCommand extends Command {
         if (!taskList.isDuplicate(t)) {
             taskList.addTask(t);
             storage.write(taskList);
-            return Ui.setBorder("ADDED : " + t.toString() + "\n"
+            return Ui.setBorder("ADDED : \n\n" + t.toString() + "\n\n"
                     + "\tYou now have " + taskList.numTasks() + " item(s) on your list.");
         } else {
             throw new DukeDuplicateTaskException(t);
