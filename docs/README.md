@@ -1,5 +1,5 @@
 # User Guide
-This guide covers the features and usage of the Aeugh, Ranice's Duke Project... application.
+This guide covers the features and usage of the **Aeugh, Ranice's Duke Project...** application.
 
 ## Overview
 1. [Purpose](#purpose)
@@ -16,37 +16,45 @@ This guide covers the features and usage of the Aeugh, Ranice's Duke Project... 
       4. [`delete`](#delete---deletes-a-task-from-the-task-list)
 
 ## Purpose
-Aeugh, Ranice's Duke Project... is a simple task managing application. It features a simple Graphical User Interface (GUI) and Command Line Interface (CLI) for user commands.
+**Aeugh, Ranice's Duke Project...** is a simple task managing application. It features a simple Graphical User Interface (GUI) and Command Line Interface (CLI) for user input.
 <br>
 <br>
 <img src="Ui.png">
 
-This application was developed for the CS2103T individual project assignment.
+This application was developed for the CS2103T Software Engineering individual project assignment in AY19/20.
 
 
 ## Features 
 
 + ### Task Types: To Dos, Deadlines, and Events
 
-There are 3 different types of tasks that can recorded by the task list: To Dos, Deadlines, and Events. To Dos are tasks that are not bounded by a date and time. Deadlines and Events are bounded by a date and time. 
+   There are 3 different types of tasks that can recorded by the task list: To Dos, Deadlines, and Events. All tasks are labelled with a task name. 
+
+  1. **To Dos** : Regular task with no additional metadata.
+  2. **Deadlines** : To keep track of deadlines, consists of due date and time metadata. 
+  3. **Events** : To keep track of events, consists of event occurance data and time metadata.
 
 + ### Task List 
 
-This application has an in bult task list that keeps track of all tasks. Each task is assigned an index number dependant on the time at which the task was added into the list, in ascending order. The task list also keeps track of the status of each task, if the task has been completed or not. Tasks can be mark as done, as well as removed from the list. The task list can be printed out into the GUI for user viewing, and the task list features a simple search function to search for tasks in the list.
+   This application has an in bult task list that keeps track of all tasks and their metadata. Each task is assigned an index number dependant on the time at which the task was added into the list, in ascending order. The task list also keeps track of the status of each task, if the task has been completed or not. Tasks can be mark as done, as well as removed from the list. The task list can be printed out into the GUI for user viewing, and the task list features a simple search function to search for tasks in the list.
+   
++ ### Data Saving 
 
-+ ### Data Saving
+   When first using this application, a data file named `duke.txt` will be created alongside the executable, for storing data. If the file already exists within the working directory, the program will read the existing `duke.txt` file. 
 
-When first using this application, a data file named `dukeData.txt` will be created alongside the executable, for storing data. Task list data is written into this file to be loaded into the application in every session. At the end of the session, all changes to the task list will be written back to the data file for use in subsequent sessions.
+   Data of the task list is written into `duke.txt` to be loaded into the application in every session. At the end of the session, all changes to the task list will be written back to `duke.txt` for use in subsequent sessions.
 
 ## Usage
 
-This application is used through a command line interface. You are required to enter commands into a text box to add tasks and manipulate the task list. Entered commands will be echoed into the chat box, afterwhich, the application will output the outcome of your command. 
+This application is used through a command line interface. You are required to enter commands into a text box to add tasks and manipulate the task list. 
+
+Entered commands will be echoed into the chat box, afterwhich, the application will output the outcome of your command. 
 
 ### Adding Tasks
 
 + #### `todo` - Adds 'To Do' task into task list.
 
-  This command adds a To Do type task into the task list. <br>
+  This command adds a 'To Do' type task into the task list. <br>
   It has 1 parameter, `task name`, for the name of the task.
 
   Example of Usage: 
@@ -65,7 +73,7 @@ This application is used through a command line interface. You are required to e
   
 + #### `deadline` - Adds 'Deadline' task into task list.
 
-  This command adds a Deadline type task into the task list. <br>
+  This command adds a 'Deadline' type task into the task list. <br>
   It has 3 parameters, `task name`, for the name of the task, `date` and `time` for the deadline.
 
   Example of Usage: 
@@ -87,14 +95,14 @@ This application is used through a command line interface. You are required to e
 
 + #### `event` - Adds 'Event' task into task list.
 
-  This command adds an Event type task into the task list. <br>
+  This command adds an 'Event' type task into the task list. <br>
   It has 3 parameters, `task name`, for the name of the task, `date` and `time` of the event.
   
   Example of Usage: 
 
   |Syntax|Example|
   |------|-------|
-  |`event (task name)` **`/at`** `[date] [time]`|`event formal dinner` **`/at`** `2020-02-01 2359`||
+  |`event (task name)` **`/at`** `[date] [time]`|`event formal dinner` **`/at`** `2020-02-01 2359`|
     
   > &#10071; **Important to Note** <br>
   > Please enter the date and time in the `YYYY-MM-DD HHMMM` format.
@@ -117,7 +125,7 @@ This application is used through a command line interface. You are required to e
 
   |Syntax|Example|
   |------|-------|
-  |`list`| `list`|
+  |`list`|`list`|
   
   Example of Outcome:
 
@@ -134,7 +142,7 @@ This application is used through a command line interface. You are required to e
 
   |Syntax|Example|
   |------|-------|
-  |`find [keyword]`| `find dinner`|
+  |`find [keyword]`|`find dinner`|
   
   Example of Outcome:
   
@@ -150,7 +158,7 @@ This application is used through a command line interface. You are required to e
 
   |Syntax|Example|
   |------|-------|
-  |`delete [task index]`| `done 1`|
+  |`delete [task index]`|`done 1`|
   
   > &#10071; **Important to Note** <br>
   > Please enter an index that is within the number of items in the task list.
@@ -158,6 +166,7 @@ This application is used through a command line interface. You are required to e
   Example of Outcome:
 
   The program will confirm the completion of the task and echo the details of the task.<br>
+  Previously incomplete tasks will have a change in status from `[ ]` to `[X]`. <br>
   <br>
   <img src="images/doneDemo.png">
 
@@ -169,7 +178,7 @@ This application is used through a command line interface. You are required to e
 
   |Syntax|Example|
   |------|-------|
-  |`delete [task index]`| `delete 1`|
+  |`delete [task index]`|`delete 1`|
   
   > &#10071; **Important to Note** <br>
   > Please enter an index that is within the number of items in the task list.
