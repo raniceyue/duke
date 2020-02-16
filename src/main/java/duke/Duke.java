@@ -7,6 +7,8 @@ import duke.util.Parser;
 import duke.util.Storage;
 import duke.util.Ui;
 
+import java.io.IOException;
+
 public class Duke {
     private Ui ui;
     private Storage storage;
@@ -17,10 +19,10 @@ public class Duke {
      */
     public Duke() {
         this.ui = new Ui();
-        this.storage = new Storage("duke.txt");
         try {
+            this.storage = new Storage();
             taskList = new TaskList(storage.load());
-        } catch (DukeException e) {
+        } catch (DukeException | IOException e) {
             System.out.println(e.toString());
         }
     }
