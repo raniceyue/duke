@@ -17,8 +17,9 @@ This guide covers the features and usage of the Aeugh, Ranice's Duke Project... 
 
 ## Purpose
 Aeugh, Ranice's Duke Project... is a simple task managing application. It features a simple Graphical User Interface (GUI) and Command Line Interface (CLI) for user commands.
-
-![](/docs/Ui.png/)
+<br>
+<br>
+<img src="Ui.png">
 
 This application was developed for the CS2103T individual project assignment.
 
@@ -35,7 +36,7 @@ This application has an in bult task list that keeps track of all tasks. Each ta
 
 + ### Data Saving
 
-Task list data is saved into a `.txt` data file to be loaded into the application in every session. At the end of the session, all changes to the task list will be written back to the data file for use in the next session.
+When first using this application, a data file named `dukeData.txt` will be created alongside the executable, for storing data. Task list data is written into this file to be loaded into the application in every session. At the end of the session, all changes to the task list will be written back to the data file for use in subsequent sessions.
 
 ## Usage
 
@@ -45,133 +46,139 @@ This application is used through a command line interface. You are required to e
 
 + #### `todo` - Adds 'To Do' task into task list.
 
-  This command adds a To Do type task into the task list. \
+  This command adds a To Do type task into the task list. <br>
   It has 1 parameter, `task name`, for the name of the task.
 
-  ##### Example of Usage: 
+  Example of Usage: 
   
   |Syntax|Example|
   |------|-------|
   |`todo (task name)`| `todo homework`|
   
-  ##### Example of Outcome:
+  Example of Outcome:
 
-  The program will confirm the addition of the task and echo the details of the added task in the chat box. \
+  The program will confirm the addition of the task and echo the details of the added task in the chat box.<br>
   It will also output the resultant number of tasks in your task list.
-  ![](/docs/images/todoDemo.png/)
+  <br>
+  <br>
+  <img src="images/todoDemo.png">
   
 + #### `deadline` - Adds 'Deadline' task into task list.
 
-  This command adds a Deadline type task into the task list. \
+  This command adds a Deadline type task into the task list. <br>
   It has 3 parameters, `task name`, for the name of the task, `date` and `time` for the deadline.
 
-  ##### Example of Usage: 
+  Example of Usage: 
   
   |Syntax|Example|
   |------|-------|
-  |`deadline (task name) /by [date] [time]`|`deadline assignment /by 2020-02-01 2359`||
+  |`deadline (task name)` **`/by`** `[date] [time]`|`deadline assignment` **`/by`** `2020-02-01 2359`||
 
-  > :information_source: **Important to Note** \
+  > &#10071; **Important to Note** <br>
   > Please enter the date and time in the `YYYY-MM-DD HHMMM` format.
   
-  ##### Example of Outcome:
+  Example of Outcome:
   
-  The program will confirm the addition of the task and echo the details of the added task in the chat box. \
-  It will also output the resultant number of tasks in your task list.
-
-  ![](/docs/images/deadlineDemo.png/)
+  The program will confirm the addition of the task and echo the details of the added task in the chat box.<br>
+  It will also output the resultant number of tasks in your task list.<br>
+  <br>
+  <img src="images/deadlineDemo.png">
   
 
 + #### `event` - Adds 'Event' task into task list.
 
-  This command adds an Event type task into the task list. \
+  This command adds an Event type task into the task list. <br>
   It has 3 parameters, `task name`, for the name of the task, `date` and `time` of the event.
   
-  ##### Example of Usage: 
+  Example of Usage: 
 
   |Syntax|Example|
   |------|-------|
-  |`event (task name) /by [date] [time]`|`event formal dinner /at 2020-02-01 2359`||
+  |`event (task name)` **`/at`** `[date] [time]`|`event formal dinner` **`/at`** `2020-02-01 2359`||
     
-  > :information_source: **Important to Note** \
+  > &#10071; **Important to Note** <br>
   > Please enter the date and time in the `YYYY-MM-DD HHMMM` format.
 
-  ##### Example of Outcome:
+  Example of Outcome:
 
-  The program will confirm the addition of the task and echo the details of the added task in the chat box. \
-  It will also output the resultant number of tasks in your task list.
-    
-  ![](/docs/images/eventDemo.png/)
+  The program will confirm the addition of the task and echo the details of the added task in the chat box. <br>
+  It will also output the resultant number of tasks in your task list.<br>
+  <br>
+  <img src="images/eventDemo.png">
 
 
 ### Task List Manipulation
 
 + #### `list` - Prints out entire task list.
 
-  `list` helps to display entire task list for user viewing in the GUI.
+  This command helps to display entire task list for user viewing in the GUI.
 
-  ##### Example of Usage:
+  Example of Usage:
 
   |Syntax|Example|
   |------|-------|
   |`list`| `list`|
   
-  ##### Example of Outcome:
+  Example of Outcome:
 
-  The program will print out the entire task list into the chat box, including the index and status of the task.
-  ![](/docs/images/listDemo.png/)
+  The program will print out the entire task list into the chat box, including the index and status of the task.<br>
+  <br>
+  <img src="images/listDemo.png">
 
 + #### `find` - Helps to search for a task in the task list given keywords.
 
-  `find` helps to search for a task in the task list given a singular keyword. \ 
+  This command helps to search for a task in the task list given a singular keyword. <br>
   The tasks are searched by their task names, and any task with a task name containing the specified keyword, will be listed out in the GUI for user viewing.
 
-  ##### Example of Usage:
+  Example of Usage:
 
   |Syntax|Example|
   |------|-------|
   |`find [keyword]`| `find dinner`|
   
-  ##### Example of Outcome:
+  Example of Outcome:
   
-  The program will print out a list of results containing tasks with tasknames containing the `keyword` substring.
-  ![](/docs/images/findDemo.png/)
+  The program will print out a list of results containing tasks with tasknames containing the `keyword` substring.<br>
+  <br>
+  <img src="images/findDemo.png">
   
 + #### `done` - Marks a task as 'done' in the task list.
 
-  `done` helps to mark a task as 'done' in the task list, given the index of the task to be marked as 'done'.
+  This command helps to mark a task as 'done' in the task list, given the index of the task to be marked as 'done'.
 
-  ##### Example of Usage:
+  Example of Usage:
 
   |Syntax|Example|
   |------|-------|
   |`delete [task index]`| `done 1`|
   
-  > :information_source: **Important to Note** \
+  > &#10071; **Important to Note** <br>
   > Please enter an index that is within the number of items in the task list.
   
-  ##### Example of Outcome:
+  Example of Outcome:
 
-  The program will confirm the completion of the task and echo the details of the task.
-  ![](/docs/images/doneDemo.png/)
+  The program will confirm the completion of the task and echo the details of the task.<br>
+  <br>
+  <img src="images/doneDemo.png">
 
 + #### `delete` - Deletes a task from the task list.
 
-  `delete` helps to delete tasks from the task list, given the index of the task to be deleted.
+  This command helps to delete tasks from the task list, given the index of the task to be deleted.
 
-  ##### Example of Usage:
+  Example of Usage:
 
   |Syntax|Example|
   |------|-------|
   |`delete [task index]`| `delete 1`|
   
-  > :information_source: **Important to Note** \
+  > &#10071; **Important to Note** <br>
   > Please enter an index that is within the number of items in the task list.
 
-  ##### Example of Outcome:
+  Example of Outcome:
 
-  The program will confirm the deletion of the task and echo the details of the deleted task.
-  ![](/docs/images/deleteDemo.png/)
+  The program will confirm the deletion of the task and echo the details of the deleted task.<br>
+  <br>
+  <img src="images/deleteDemo.png">
   
 
 
