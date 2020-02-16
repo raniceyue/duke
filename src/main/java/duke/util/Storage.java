@@ -2,9 +2,13 @@ package duke.util;
 
 import duke.exceptions.DukeBadPathException;
 import duke.exceptions.DukeException;
-import duke.exceptions.DukeFileExistsException;
+import duke.exceptions.DukeFileCreationException;
 import duke.exceptions.DukeWriteFailException;
-import duke.tasks.*;
+import duke.tasks.Deadline;
+import duke.tasks.Event;
+import duke.tasks.Task;
+import duke.tasks.TaskList;
+import duke.tasks.ToDo;
 
 import java.io.BufferedWriter;
 import java.io.File;
@@ -25,12 +29,14 @@ public class Storage {
     /**
      * Constructor for Storage.
      */
-    public Storage() throws DukeException, IOException {
+    public Storage() throws IOException, DukeFileCreationException {
         String home = System.getProperty("user.dir");                   // Path to current directory.
-        this.dataFilePath = Paths.get(home,  "dukeData.txt"); // Create Path object for new file
-        File dataFile = new File(dataFilePath.toString());
-        if (!dataFile.createNewFile()) {                                // If file cannot be created.
-            throw new DukeFileExistsException();
+        this.dataFilePath = Paths.get(home, "duke.txt"); // Create Path object for data/duke.txt
+        if (!Files.exists(dataFilePath)) {                              // if file does not exist yet
+            File dataFile = new File(dataFilePath.toString());          // create new file
+            if (!dataFile.createNewFile()) {
+                throw new DukeFileCreationException();
+            }
         }
     }
 

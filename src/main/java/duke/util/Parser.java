@@ -115,21 +115,21 @@ public class Parser {
             String taskDetails = e.substring(7);
             Task t;
             switch (taskType) {
-                case "[T]":
-                    t = new ToDo(taskDetails);
-                    break;
-                case "[E]": {
-                    String[] details = taskDetails.split(" /at ");
-                    t = new Event(details[0], details[1]);
-                    break;
-                }
-                case "[D]": {
-                    String[] details = taskDetails.split(" /by ");
-                    t = new Deadline(details[0], details[1]);
-                    break;
-                }
-                default:
-                    throw new DukeBadFileException();
+            case "[T]":
+                t = new ToDo(taskDetails);
+                break;
+            case "[E]": {
+                String[] details = taskDetails.split(" /at ");
+                t = new Event(details[0], details[1]);
+                break;
+            }
+            case "[D]": {
+                String[] details = taskDetails.split(" /by ");
+                t = new Deadline(details[0], details[1]);
+                break;
+            }
+            default:
+                throw new DukeBadFileException();
             }
             if (taskStatus.equals("[X]")) {
                 t.setDone();
