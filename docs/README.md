@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.com/raniceyue/duke.svg?branch=master)](https://travis-ci.com/raniceyue/duke)
+
 # User Guide
 This guide covers the features and usage of the **Aeugh, Ranice's Duke Project...** application.
 
@@ -55,13 +57,13 @@ Entered commands will be echoed into the chat box, afterwhich, the application w
 + #### `todo` - Adds 'To Do' task into task list.
 
   This command adds a 'To Do' type task into the task list. <br>
-  It has 1 parameter, `task name`, for the name of the task.
+  It has 1 parameter, `TASK_NAME`, for the name of the task.
 
   Example of Usage: 
   
   |Syntax|Example|
   |------|-------|
-  |`todo (task name)`| `todo homework`|
+  |`todo TASK_NAME`| `todo homework`|
   
   Example of Outcome:
 
@@ -74,16 +76,16 @@ Entered commands will be echoed into the chat box, afterwhich, the application w
 + #### `deadline` - Adds 'Deadline' task into task list.
 
   This command adds a 'Deadline' type task into the task list. <br>
-  It has 3 parameters, `task name`, for the name of the task, `date` and `time` for the deadline.
+  It has 3 parameters, `TASK_NAME`, for the name of the task, `DATE` and `TIME` for the deadline.
 
   Example of Usage: 
   
   |Syntax|Example|
   |------|-------|
-  |`deadline (task name)` **`/by`** `[date] [time]`|`deadline assignment` **`/by`** `2020-02-01 2359`||
+  |`deadline TASK_NAME` **`/by`** `DATE TIME`|`deadline assignment` **`/by`** `2020-02-01 2359`||
 
   > &#10071; **Important to Note** <br>
-  > Please enter the date and time in the `YYYY-MM-DD HHMMM` format.
+  > Please enter the date and time in the `YYYY-MM-DD HHMM` format.
   
   Example of Outcome:
   
@@ -96,16 +98,16 @@ Entered commands will be echoed into the chat box, afterwhich, the application w
 + #### `event` - Adds 'Event' task into task list.
 
   This command adds an 'Event' type task into the task list. <br>
-  It has 3 parameters, `task name`, for the name of the task, `date` and `time` of the event.
+  It has 3 parameters, `TASK_NAME`, for the name of the task, `DATE` and `TIME` of the event.
   
   Example of Usage: 
 
   |Syntax|Example|
   |------|-------|
-  |`event (task name)` **`/at`** `[date] [time]`|`event formal dinner` **`/at`** `2020-02-01 2359`|
+  |`event TASK_NAME` **`/at`** `DATE TIME`|`event formal dinner` **`/at`** `2020-02-01 2359`|
     
   > &#10071; **Important to Note** <br>
-  > Please enter the date and time in the `YYYY-MM-DD HHMMM` format.
+  > Please enter the date and time in the `YYYY-MM-DD HHMM` format.
 
   Example of Outcome:
 
@@ -142,7 +144,7 @@ Entered commands will be echoed into the chat box, afterwhich, the application w
 
   |Syntax|Example|
   |------|-------|
-  |`find [keyword]`|`find dinner`|
+  |`find [KEYWORD]`|`find dinner`|
   
   Example of Outcome:
   
@@ -152,13 +154,13 @@ Entered commands will be echoed into the chat box, afterwhich, the application w
   
 + #### `done` - Marks a task as 'done' in the task list.
 
-  This command helps to mark a task as 'done' in the task list, given the index of the task to be marked as 'done'.
+  This command helps to mark a task as 'done' in the task list, given the `INDEX` of the task to be marked as 'done'.
 
   Example of Usage:
 
   |Syntax|Example|
   |------|-------|
-  |`delete [task index]`|`done 1`|
+  |`done INDEX`|`done 1`|
   
   > &#10071; **Important to Note** <br>
   > Please enter an index that is within the number of items in the task list.
@@ -172,13 +174,13 @@ Entered commands will be echoed into the chat box, afterwhich, the application w
 
 + #### `delete` - Deletes a task from the task list.
 
-  This command helps to delete tasks from the task list, given the index of the task to be deleted.
+  This command helps to delete tasks from the task list, given the `INDEX` of the task to be deleted.
 
   Example of Usage:
 
   |Syntax|Example|
   |------|-------|
-  |`delete [task index]`|`delete 1`|
+  |`delete INDEX`|`delete 1`|
   
   > &#10071; **Important to Note** <br>
   > Please enter an index that is within the number of items in the task list.
