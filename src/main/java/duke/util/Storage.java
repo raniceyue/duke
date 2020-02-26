@@ -27,7 +27,7 @@ public class Storage {
     private Path dataFilePath;
 
     /**
-     * Constructor for Storage.
+     * Constructs new Storage object.
      */
     public Storage() throws IOException, DukeFileCreationException {
         String home = System.getProperty("user.dir");                   // Path to current directory.
@@ -62,7 +62,7 @@ public class Storage {
     }
 
     /**
-     * Writes changes back into storage file.
+     * Writes changes in task list back into storage file.
      * @param taskList task list to be written back into file.
      * @throws DukeWriteFailException if the data fails to be written into file.
      */

@@ -9,7 +9,7 @@ public class Deadline extends Task {
     protected String rawDate;
 
     /**
-     * Constructor for Deadline.
+     * Constructs new Deadline object.
      * @param taskName name of deadline.
      * @param dateTime date and time of deadline.
      */

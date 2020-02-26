@@ -19,7 +19,7 @@ public class Task {
     }
 
     /**
-     * Method to get status of a task as a string.
+     * Gets status of a task as a string.
      * @return string indicating if the task is done or not.
      */
     public String getStatus() {
