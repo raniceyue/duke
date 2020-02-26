@@ -1,5 +1,6 @@
 package duke;
 
+import duke.commands.ByeCommand;
 import duke.commands.Command;
 import duke.exceptions.DukeException;
 import duke.tasks.TaskList;
@@ -36,6 +37,9 @@ public class Duke {
         try {
             assert !input.isEmpty() : "YOU DIDN'T SAY ANYTHING!!";
             Command c = Parser.parseCommand(input);
+            if (c instanceof ByeCommand) {
+                System.exit(0);
+            }
             return c.execute(taskList, ui, storage);
         } catch (DukeException e) {
             return e.toString();

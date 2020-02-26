@@ -138,7 +138,8 @@ Entered commands will be echoed into the chat box, afterwhich, the application w
 + #### `find` - Helps to search for a task in the task list given keywords.
 
   This command helps to search for a task in the task list given a singular keyword. <br>
-  The tasks are searched by their task names, and any task with a task name containing the specified keyword, will be listed out in the GUI for user viewing.
+  The tasks are searched by their task names, and any task with a task name containing the specified keyword, will be listed out in the GUI for user viewing.<br>
+  The search is case sensitive.
 
   Example of Usage:
 
@@ -191,6 +192,25 @@ Entered commands will be echoed into the chat box, afterwhich, the application w
   <br>
   <img src="images/deleteDemo.png">
   
+### Exiting the Program
+
+There are 2 ways to exit this program. 
+1. Exiting through clicking the 'close' button on the window titlebar.
+2. Using the `bye` command.
+
++ #### `bye` - Exits and closes the program
+
+  This command helps to delete tasks from the task list, given the `INDEX` of the task to be deleted.
+
+  Example of Usage:
+
+  |Syntax|Example|
+  |------|-------|
+  |`bye`|`bye`|
+  
+  Example of Outcome:
+
+  Program will close and the window will disappear.
 
 
 
