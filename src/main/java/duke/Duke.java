@@ -1,11 +1,14 @@
 package duke;
 
+import duke.commands.ByeCommand;
 import duke.commands.Command;
 import duke.exceptions.DukeException;
 import duke.tasks.TaskList;
 import duke.util.Parser;
 import duke.util.Storage;
 import duke.util.Ui;
+
+import java.io.IOException;
 
 public class Duke {
     private Ui ui;
@@ -17,10 +20,10 @@ public class Duke {
      */
     public Duke() {
         this.ui = new Ui();
-        this.storage = new Storage("duke.txt");
         try {
+            this.storage = new Storage();
             taskList = new TaskList(storage.load());
-        } catch (DukeException e) {
+        } catch (DukeException | IOException e) {
             System.out.println(e.toString());
         }
     }
@@ -34,6 +37,9 @@ public class Duke {
         try {
             assert !input.isEmpty() : "YOU DIDN'T SAY ANYTHING!!";
             Command c = Parser.parseCommand(input);
+            if (c instanceof ByeCommand) {
+                System.exit(0);
+            }
             return c.execute(taskList, ui, storage);
         } catch (DukeException e) {
             return e.toString();

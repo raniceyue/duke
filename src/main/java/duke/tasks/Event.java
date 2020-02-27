@@ -9,7 +9,7 @@ public class Event extends Task {
     protected String rawDate;
 
     /**
-     * Constructor for Event.
+     * Constructs new Event object.
      * @param taskName name of event.
      * @param dateTime date and time when event occurs.
      */

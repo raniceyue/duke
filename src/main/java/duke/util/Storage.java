@@ -2,10 +2,16 @@ package duke.util;
 
 import duke.exceptions.DukeBadPathException;
 import duke.exceptions.DukeException;
+import duke.exceptions.DukeFileCreationException;
 import duke.exceptions.DukeWriteFailException;
-import duke.tasks.*;
+import duke.tasks.Deadline;
+import duke.tasks.Event;
+import duke.tasks.Task;
+import duke.tasks.TaskList;
+import duke.tasks.ToDo;
 
 import java.io.BufferedWriter;
+import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.nio.file.Files;
@@ -21,14 +27,17 @@ public class Storage {
     private Path dataFilePath;
 
     /**
-     * Constructor for Storage.
-     * @param filePath path of storage file.
+     * Constructs new Storage object.
      */
-    public Storage(String filePath) {
-        String home = System.getProperty("user.dir");
-        Path projectRootPath = Paths.get(home);
-        this.dataFilePath = Paths.get(projectRootPath.toString(), "data", filePath);
-        assert Files.exists(dataFilePath) : "Path does not exist!!!";
+    public Storage() throws IOException, DukeFileCreationException {
+        String home = System.getProperty("user.dir");                   // Path to current directory.
+        this.dataFilePath = Paths.get(home, "duke.txt"); // Create Path object for data/duke.txt
+        if (!Files.exists(dataFilePath)) {                              // if file does not exist yet
+            File dataFile = new File(dataFilePath.toString());          // create new file
+            if (!dataFile.createNewFile()) {
+                throw new DukeFileCreationException();
+            }
+        }
     }
 
     /**
@@ -53,7 +62,7 @@ public class Storage {
     }
 
     /**
-     * Writes changes back into storage file.
+     * Writes changes in task list back into storage file.
      * @param taskList task list to be written back into file.
      * @throws DukeWriteFailException if the data fails to be written into file.
      */

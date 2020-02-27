@@ -1,14 +1,14 @@
 package duke.util;
 
 public class Ui {
-    public static final String border = "=^..^=   =^..^=   =^..^=\n";
+    public static final String BORDER = "=^..^=   =^..^=   =^..^=\n";
 
     public Ui() {
 
     }
 
     public static String setBorder(String msg) {
-        return border + "\n\t" + msg + "\n\n" + border;
+        return BORDER + "\n\t" + msg + "\n\n" + BORDER;
     }
 
     /**
