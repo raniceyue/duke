@@ -1,7 +1,7 @@
 package duke.exceptions;
 
 /**
- * Handles date and time inputs that are not formatted correctly.
+ * Handles qdate and time inputs that are not formatted correctly.
  */
 public class DukeBadDateTimeException extends DukeException {
     public DukeBadDateTimeException() {

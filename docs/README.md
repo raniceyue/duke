@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.com/raniceyue/duke.svg?branch=master)](https://travis-ci.com/raniceyue/duke)
+[![Build Status](https://travis-ci.com/raniceyue/duke.svg?branch=master)](https://travis-ci.com/raniceyue/duke) [![Codacy Badge](https://api.codacy.com/project/badge/Grade/7f0c8a69006e4c7f925f326ebad7d25f)](https://www.codacy.com/manual/raniceyue/duke?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=raniceyue/duke&amp;utm_campaign=Badge_Grade)
 
 # User Guide
 This guide covers the features and usage of the **Aeugh, Ranice's Duke Project...** application.
