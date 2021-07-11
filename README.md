@@ -2,7 +2,7 @@
 
 # About
 
-This is a project that I have done for the CS2103T individual project assignment. You can find out more about this project [here.](http://ranice.net/duke)
+This is a project that I have done for the CS2103T individual project assignment. You can find out more about this project [here.](http://raniceyue.github.io/duke)
 
 ## Downloading This Project
 
